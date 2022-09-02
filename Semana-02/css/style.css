@@ -1,0 +1,54 @@
+body{
+    font-family: 'Roboto';
+}
+
+header{
+    width: 1440px;
+    height: 980px;
+    background-image:url(../assets/BackgroundHeader.png);
+    border: 1px solid red;
+}
+
+.card-info{
+    position: absolute;
+    width: 481px;
+    height: 980px;
+    left: 183px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    border: 1px solid red;
+
+}
+
+h1{
+    margin: 170px 0px 17px 22px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    color: #FFFFFF;
+}
+
+h2{
+    margin: 0px 0px 98px 22px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+
+.card-info-text{
+    margin: 0px 93px 0px 22px;
+    width: 340px;
+    border: 1px solid red;
+}
+
+p{
+    margin-bottom: 25px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.75);
+}
