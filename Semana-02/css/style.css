@@ -290,23 +290,32 @@ article p{
 
 
 /* -------------- Functionalities -------------------- */
-.card-functionalities{
+section{
+    height: 630px;
     border: 1px solid red;
+}
+section h3{
+    margin-top: 27px;
+}
+.card-functionalities{
+    float: right;
+    width: 540px;
+    margin-right: 102px;
+    margin-bottom: 111px;
 }
 
 .card-functionalities img{
+    float: left;
     width: 141.42px;
     height: 141.42px;
-    border: 1px solid red;
-
+    margin-right: 18px;
 }
 
 .card-functionalities h4{
+    margin-bottom: 12px;
     font-weight: 700;
     font-size: 30px;
     line-height: 35px;
-    border: 1px solid red;
-
 }
 
 .card-functionalities p{
@@ -314,6 +323,4 @@ article p{
     font-size: 20px;
     line-height: 23px;
     color: #000000;
-    border: 1px solid red;
-
 }
