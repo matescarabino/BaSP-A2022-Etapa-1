@@ -6,7 +6,6 @@ header{
     width: 1440px;
     height: 980px;
     background-image:url(../assets/BackgroundHeader.png);
-    border: 1px solid red;
 }
 
 .card-info{
@@ -16,12 +15,11 @@ header{
     left: 183px;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(4px);
-    border: 1px solid red;
 
 }
 
 h1{
-    margin: 170px 0px 17px 22px;
+    margin: 170px 0px 0px 22px;
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
@@ -29,8 +27,14 @@ h1{
     color: #FFFFFF;
 }
 
+.card-info-barra{
+    border-top:2px solid #AACE9B;
+    width: 452px;
+    margin-left: 22px;
+}
+
 h2{
-    margin: 0px 0px 98px 22px;
+    margin: 17px 0px 98px 22px;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -40,8 +44,7 @@ h2{
 
 .card-info-text{
     margin: 0px 93px 0px 22px;
-    width: 340px;
-    border: 1px solid red;
+    width: 366px;
 }
 
 p{
@@ -51,4 +54,81 @@ p{
     font-size: 16px;
     line-height: 30px;
     color: rgba(255, 255, 255, 0.75);
+}
+
+aside{
+    position: absolute;
+    width: 152px;
+    height: 980px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    color: #F13312;
+
+}
+
+.nav-button{
+    width: 150px;
+    height: 48px;
+    margin-bottom: 25px;
+    border:1px solid #ffffff;
+}
+
+.nav-button p{
+    margin: 15px 54px 15px 56px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.nav-button img{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    margin: 12px 107px 12px 20px;
+    color: #F13312;
+}
+
+aside p {
+    color: #F13312;
+}
+
+aside h3{
+    margin-left: 11px;
+    margin-top: 273px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.contactUs-barra{
+    border: 1px solid #F13312;
+    width: 81px;
+    margin-left: 8px;
+}
+
+.nav-button-contact{
+    width: 150px;
+    height: 48px;
+    margin-bottom: 25px;
+    border:1px solid #ffffff;
+}
+
+.nav-button-contact p{
+    margin: 15px 0px 15px 46px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    border:1px solid red;
+
+}
+
+.nav-button-contact img{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    margin: 12px 107px 12px 5px;
+    color: #F13312;
+    border:1px solid red;
+
 }
