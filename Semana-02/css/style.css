@@ -2,6 +2,7 @@ body{
     font-family: 'Roboto';
 }
 
+/* -------------- header -------------------- */
 header{
     position: absolute;
     width: 1440px;
@@ -57,6 +58,7 @@ p{
     color: rgba(255, 255, 255, 0.75);
 }
 
+/* -------------- aside -------------------- */
 aside{
     position: sticky;
     z-index: +1;
@@ -137,6 +139,8 @@ main{
     width: 1440px;
 }
 
+/* -------------- Who We Are -------------------- */
+
 main h3{
     margin: 100px 55px 0px 209px;
     text-align: center;
@@ -160,6 +164,8 @@ article p{
     line-height: 30px;
     color: #373867;
 }
+
+/* -------------- Why choose us? -------------------- */
 
 /* Productivity Booster */
 .card-description-1{
@@ -280,4 +286,34 @@ article p{
     margin-bottom: 64px;
     width: 1176px;
     margin-left: 162px;
+}
+
+
+/* -------------- Functionalities -------------------- */
+.card-functionalities{
+    border: 1px solid red;
+}
+
+.card-functionalities img{
+    width: 141.42px;
+    height: 141.42px;
+    border: 1px solid red;
+
+}
+
+.card-functionalities h4{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    border: 1px solid red;
+
+}
+
+.card-functionalities p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    border: 1px solid red;
+
 }
