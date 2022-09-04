@@ -178,29 +178,32 @@
             </section>
             <form>
                 <h3>Contact</h3>
-                <div class="desc-barra"></div>
-                <div>
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name Here" required>
+                <div class="desc-barra-contact"></div>
+                <div class="form">
+                    <div class="form-text-field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name Here" required>
+                    </div>
+                    <div class="form-text-field">
+                        <label>&nbsp;</label>
+                        <select name="ContactArea" required>
+                            <option value="" disabled selected hidden>Contact Area</option>
+                            <option value="option1">option1</option>
+                            <option value="option2">option2</option>
+                            <option value="option3">option3</option>
+                        </select>
+                    </div>
+                    <div class="form-text-field">
+                        <label for="email">Email</label>
+                        <input type="mail" id="email" name="email" placeholder="Your Email Here" required>
+                    </div>
+                    <div class="form-textarea-field">
+                        <label for="message">Message</label>
+                        <textarea name="message" form="message" required>Your Message Here</textarea>
+                    </div>
+                    <button type="submit" name="Submit" value="Send Message">Send Message</button>
+                    <button type="reset" name="Reset" value="Reset">Reset</button>
                 </div>
-                <div>
-                    <select name="ContactArea" required>
-                        <option value="" disabled selected hidden>Contact Area</option>
-                        <option value="option1">option1</option>
-                        <option value="option2">option2</option>
-                        <option value="option3">option3</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="email">Email</label>
-                    <input type="mail" id="email" name="email" placeholder="Your Email Here" required>
-                </div>
-                <div>
-                    <label for="message">Message</label>
-                    <textarea name="message" form="message" required>Your Message Here</textarea>
-                </div>
-                <button type="submit" name="Submit" value="Send Message">Send Message</button>
-                <button type="reset" name="Reset" value="Reset">Reset</button>
             </form>
             <section>
                 <div>
