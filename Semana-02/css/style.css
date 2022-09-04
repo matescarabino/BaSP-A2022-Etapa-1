@@ -59,13 +59,13 @@ p{
 
 aside{
     position: sticky;
+    z-index: +1;
     width: 152px;
     height: 980px;
     left: 0;
     top: 0;
     background: #FFFFFF;
     color: #F13312;
-
 }
 
 .nav-button{
@@ -161,6 +161,7 @@ article p{
     color: #373867;
 }
 
+/* Productivity Booster */
 .card-description-1{
     position: relative;
     width: 1440px;
@@ -194,6 +195,88 @@ article p{
 
 .desc-barra-1{
     border-top: 4px solid #286276;
+    margin-bottom: 64px;
+    width: 1176px;
+    margin-left: 162px;
+}
+
+/* Work Traceability */
+.card-description-2{
+    position: relative;
+    width: 1440px;
+    height: 840px;
+    background-color: #D9D9D9;
+    border:1px solid #fff;
+}
+
+.card-description-2 h4{
+    margin-left: 878px;
+    margin-top: 247px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+}
+
+.card-description-2 p{
+    margin-left: 878px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: left;
+    color: #000000;
+}
+
+.card-description-2 img{
+    position: absolute;
+    width: 570px;
+    height: 400px;
+    left: 162px;
+    top: 220px;
+}
+
+.desc-barra-2{
+    border-top: 4px solid #fff;
+    margin-bottom: 64px;
+    width: 1176px;
+    margin-left: 162px;
+}
+
+/* Leadership and team management */
+.card-description-3{
+    position: relative;
+    width: 1440px;
+    height: 840px;
+    border:1px solid #fff;
+}
+
+.card-description-3 h4{
+    margin-left: 162px;
+    margin-top: 247px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+}
+
+.card-description-3 p{
+    margin-left: 162px;
+    margin-right: 619px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: left;
+    color: #000000;
+}
+
+.card-description-3 img{
+    position: absolute;
+    width: 510px;
+    height: 400px;
+    left: 882px;
+    top: 220px;
+}
+
+.desc-barra-3{
+    border-top: 4px solid #D9D9D9;;
     margin-bottom: 64px;
     width: 1176px;
     margin-left: 162px;
