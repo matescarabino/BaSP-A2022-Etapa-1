@@ -292,7 +292,6 @@ article p{
 /* -------------- Functionalities -------------------- */
 section{
     height: 630px;
-    border: 1px solid red;
 }
 section h3{
     margin-top: 27px;
@@ -329,7 +328,6 @@ section h3{
 
 form{
     height: 665px;
-    border: 1px solid red;
 }
 
 .form{
@@ -391,4 +389,64 @@ textarea{
     margin-top: 29px;
     border-radius: 4px;
     opacity: 0.5;
+}
+
+form button{
+    padding: 12px 20px;
+    gap: 10px;
+    width: 177px;
+    height: 48px;
+    left: 206px;
+    top: 563px;
+    background: #AACE9B;
+    border-radius: 5px;
+}
+
+button{
+    float: left;
+    margin-top: 16px;
+    margin-right: 735px;
+    border:1px solid #AACE9B;
+
+}
+button p{
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #373867;
+    border:1px solid red;
+}
+
+button img{
+    width: 16px;
+    height: 16px;
+    border:1px solid red;
+}
+
+/* -------------- List -------------------- */
+
+#card-list{
+    height: 247px;
+    background-image:url(../assets/list-picture.png);
+}
+
+.card-list-info{
+    width: 180px;
+    height: 110px;
+    border:1px solid red;
+}
+
+.card-list-info h4{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #373867;
+}
+
+
+.card-list-info li{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #373867;
 }

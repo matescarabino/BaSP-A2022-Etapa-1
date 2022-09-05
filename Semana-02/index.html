@@ -7,8 +7,6 @@
         <link rel="stylesheet" href="./css/reset.css">
         <link rel="stylesheet" href="./css/style.css">
         <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-        <title>Trackgenix</title>
     </head>
     <body>
         <header>
@@ -60,7 +58,7 @@
                 <ul>
                     <li>
                         <div class="nav-button-contact">
-                            <img src="./assets/Icons/mail.png" alt="Mail">
+                            <img src="./assets/Icons/MessageIcon.png" alt="Mail">
                             <p>trackgenix@gmail.com</p>
                         </div>
                     </li>
@@ -201,12 +199,18 @@
                         <label for="message">Message</label>
                         <textarea name="message" form="message" required>Your Message Here</textarea>
                     </div>
-                    <button type="submit" name="Submit" value="Send Message">Send Message</button>
-                    <button type="reset" name="Reset" value="Reset">Reset</button>
+                    <button type="submit" name="Submit" value="Send Message">
+                        <img src="./assets/Icons/envelope-regular.svg" alt="mail">
+                        <p>Send Message</p>
+                    </button>
+                    <button type="reset" name="Reset" value="Reset">
+                        <img src="./assets/Icons/xmark-solid.svg" alt="mail">
+                        <p>Reset</p>
+                    </button>
                 </div>
             </form>
-            <section>
-                <div>
+            <section id="card-list">
+                <div class="card-list-info">
                     <h4>Products</h4>
                     <ol>
                         <li>Features</li>
@@ -215,7 +219,7 @@
                         <li>Additional features</li>
                     </ol>
                 </div>
-                <div>
+                <div class="card-list-info">
                     <h4>Enterprice</h4>
                     <ol>
                         <li>About us</li>
@@ -224,7 +228,7 @@
                         <li>Blog</li>
                     </ol>
                 </div>
-                <div>
+                <div class="card-list-info">
                     <h4>Support</h4>
                     <ol>
                         <li>Help</li>
