@@ -30,8 +30,8 @@ h1{
 }
 
 .card-info-barra{
-    border-top:2px solid #AACE9B;
     width: 452px;
+    border-top:2px solid #AACE9B;
     margin-left: 22px;
 }
 
@@ -45,8 +45,8 @@ h2{
 }
 
 .card-info-text{
-    margin: 0px 93px 0px 22px;
     width: 366px;
+    margin: 0px 93px 0px 22px;
 }
 
 p{
@@ -61,13 +61,13 @@ p{
 /* -------------- aside -------------------- */
 aside{
     position: sticky;
-    z-index: +1;
     width: 152px;
     height: 980px;
     left: 0;
     top: 0;
     background: #FFFFFF;
     color: #F13312;
+    z-index: +1;
 }
 
 .nav-button{
@@ -104,9 +104,10 @@ aside h3{
     line-height: 16px;
 }
 
-.contactUs-barra{
+.contact-Us-barra{
     width: 81px;
     margin-left: 8px;
+    border: 1px solid #F13312;
 }
 
 .nav-button-contact{
@@ -121,7 +122,6 @@ aside h3{
     font-weight: 500;
     font-size: 10px;
     line-height: 12px;
-
 }
 
 .nav-button-contact img{
@@ -147,10 +147,10 @@ main h3{
 }
 
 .desc-barra{
-    border-top: 10px solid #D9D9D9;
-    margin-bottom: 67px;
     width: 1176px;
+    margin-bottom: 67px;
     margin-left: 209px;
+    border-top: 10px solid #D9D9D9;
 }
 
 article p{
@@ -160,6 +160,14 @@ article p{
     font-size: 20px;
     line-height: 30px;
     color: #373867;
+}
+
+#card-info-text-secondary{
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #49A37B;
 }
 
 /* -------------- Why choose us? -------------------- */
@@ -197,10 +205,10 @@ article p{
 }
 
 .desc-barra-1{
-    border-top: 4px solid #286276;
-    margin-bottom: 64px;
     width: 1176px;
+    margin-bottom: 64px;
     margin-left: 162px;
+    border-top: 4px solid #286276;
 }
 
 /* Work Traceability */
@@ -238,10 +246,10 @@ article p{
 }
 
 .desc-barra-2{
-    border-top: 4px solid #fff;
-    margin-bottom: 64px;
     width: 1176px;
+    margin-bottom: 64px;
     margin-left: 162px;
+    border-top: 4px solid #fff;
 }
 
 /* Leadership and team management */
@@ -279,10 +287,10 @@ article p{
 }
 
 .desc-barra-3{
-    border-top: 4px solid #D9D9D9;;
-    margin-bottom: 64px;
     width: 1176px;
+    margin-bottom: 64px;
     margin-left: 162px;
+    border-top: 4px solid #D9D9D9;;
 }
 
 
@@ -325,7 +333,6 @@ section h3{
 
 form{
     height: 665px;
-
 }
 
 .form{
@@ -340,10 +347,10 @@ form h3{
 }
 
 .desc-barra-contact{
-    border-top: 10px solid #D9D9D9;
-    margin-bottom: 10px;
     width: 1176px;
+    margin-bottom: 10px;
     margin-left: 209px;
+    border-top: 10px solid #D9D9D9;
 }
 
 .form-text-field{
@@ -458,10 +465,10 @@ textarea{
 
 .card-list-info{
     float: left;
-    margin-top: 63px;
-    margin-right:67px;
     width: 180px;
     height: 110px;
+    margin-top: 63px;
+    margin-right:67px;
 }
 
 .card-list-info h4{
@@ -470,7 +477,6 @@ textarea{
     line-height: 23px;
     color: #373867;
 }
-
 
 .card-list-info ol{
     margin-left: 15px;
@@ -495,17 +501,14 @@ footer a{
 }
 
 #card-networks-icons{
-    margin-left: 536px;
     width: 466px;
+    margin-left: 536px;
 }
 
 #card-networks-icons img{
-    margin-top: 35px;
-    margin-right: 25px;
-    margin-left: 25px;
-    margin-bottom: 32px;
     width: 38px;
     height: 38px;
+    margin: 35px 25px 32px 25px;
 }
 
 footer p{
