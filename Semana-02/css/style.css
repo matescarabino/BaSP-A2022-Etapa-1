@@ -433,7 +433,7 @@ button img{
 .card-list{
     height: 100%;
     width: 750px;
-    margin-left: 383px;
+    margin-left: 474px;
 }
 
 .card-list-info{
@@ -460,3 +460,36 @@ button img{
     line-height: 14px;
     color: #373867;
 }
+
+/* -------------- Footer -------------------- */
+
+footer{
+    text-align: center;
+    height: 176px;
+    width: 1440px;
+    background: #AACE9B;
+}
+
+#card-networks-icons{
+    margin-left: 536px;
+    width: 466px;
+}
+
+#card-networks-icons img{
+    margin-top: 35px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-bottom: 32px;
+    width: 38px;
+    height: 38px;
+}
+
+footer p{
+    margin-bottom: 15px;
+    margin-left: 105px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+}
+
