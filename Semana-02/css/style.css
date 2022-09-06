@@ -110,9 +110,9 @@ aside h3{
 }
 
 .nav-button-contact{
-    width: 150px;
+    width: 146px;
     height: 48px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     border:1px solid #ffffff;
 }
 
@@ -125,12 +125,15 @@ aside h3{
 
 .nav-button-contact img{
     position: absolute;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     margin: 12px 107px 12px 5px;
     color: #F13312;
 }
 
+#nav-button-contact-adress img{
+    margin: 22px 107px 12px 5px;
+}
 main{
     width: 1440px;
 }
@@ -415,6 +418,10 @@ textarea{
     border:1px solid #AACE9B;
 }
 
+#send-message:hover{
+    border:1px solid #000;
+} 
+
 #reset{
     position: absolute;
     right: 0;
@@ -423,6 +430,10 @@ textarea{
     border-radius: 5px;
     background: #F13312;
     border:1px solid #F13312;
+}
+
+#reset:hover{
+    border:1px solid #000;
 }
 
 .form-button-field button p{
@@ -449,6 +460,8 @@ textarea{
     width: 16px;
     height: 16px;
 }
+
+ 
 /* -------------- List -------------------- */
 
 #card-list{
@@ -484,6 +497,10 @@ textarea{
     font-size: 12px;
     line-height: 14px;
     color: #373867;
+}
+
+.card-list-info li:hover{
+    text-decoration: underline;
 }
 
 /* -------------- Footer -------------------- */
