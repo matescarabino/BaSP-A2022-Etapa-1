@@ -22,6 +22,12 @@
 - We include the styles corresponding to the HTML structure of week 01 to ensure that when viewing the page, it looks identical to the landing of the screenflow in Figma (week 00).
 - The unit of measurement was px, so we couldn't use flexbox or grid.
 
+### Week 03 **Flexbox**
+To see working site [click here](https://matescarabino.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html)
+
+- We fixed the CSS from last week with the corrections made by the tutors.
+- We had to do the same that in week 02 but this time we had to use Flexbox propieties in CSS to give style to the site.
+- We also had to make the site responsive using breakpoints in with media queries and making focus on develop mobile first.
 
 ## Author ✒️
 - **Mateo Scarabino** - [matescarabino](https://github.com/matescarabino)
