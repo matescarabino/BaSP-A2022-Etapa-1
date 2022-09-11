@@ -104,3 +104,82 @@ article p{
 }
 
 /* -------------- Contact -------------------- */
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.form-text-field{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: start;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.form label{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #373867;
+}
+
+input, select{
+    height: 25px;
+    margin-top: 10px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+}
+
+.form textarea{
+    height: 80px;
+    margin-top: 10px;
+    border-radius: 4px;
+    opacity: 0.5;
+}
+
+.form-button-field{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.form-button-field button{
+    display:flex;
+    flex-direction: row;
+}
+
+.form-button-field img{
+    align-self: center;
+    width: 16px;
+    height: 16px;
+}
+
+.form-button-field p{
+    margin: 8px 0px 0px 5px;
+    font-size: 13px;
+    line-height: 15px;
+    color: #373867;
+}
+
+#send-message{
+    width: 125px;
+    height: 35px;
+    border-radius: 5px;
+    background: #AACE9B;
+    border:1px solid #AACE9B;
+}
+
+#reset{
+    width: 80px;
+    height: 35px;
+    border-radius: 5px;
+    background: #F13312;
+    border:1px solid #F13312;
+}
+
