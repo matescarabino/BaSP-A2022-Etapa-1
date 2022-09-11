@@ -206,7 +206,6 @@ input, select{
 
 .card-list-info h4{
     text-align: start;
-
     font-weight: 500;
     font-size: 18px;
     line-height: 23px;
@@ -229,34 +228,3 @@ input, select{
     text-decoration: underline;
 }
 
-/* -------------- Footer -------------------- */
-footer{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-    background: #AACE9B;
-}
-
-footer a{
-    text-decoration: none;
-}
-
-#card-networks-icons{
-    width: 100%;
-}
-
-#card-networks-icons img{
-    width: 25px;
-    height: 25px;
-    margin: 35px 15px 32px 15px;
-}
-
-footer p{
-    align-self: center;    
-    margin-bottom: 15px;
-    font-size: 12px;
-    line-height: 14px;
-    color: #000000;
-}
