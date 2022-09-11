@@ -1,23 +1,30 @@
 body{
     font-family: 'Roboto';
-    width: 480px;
-
+    display: flex;
+    flex-wrap: wrap;
 }
 
+/*Larger phones and tablets*/
+@media (min-width: 480px) {
 
-@media (min-width: 768px) {
-
-    /* estilos para tablet */
     body{
         background-color: green;
     }
 
 }
 
+/*Larger tablets in landscape, laptops and small desktops*/
+@media (min-width: 768px) {
+
+    body{
+        background-color: violet;
+    }
+}
+
+/*Larger desktops and monitors*/
 @media (min-width: 1024px) {
 
-    /* estilos para PC */
     body{
-        background-color: blue;
+        background-color: red;
     }
 }

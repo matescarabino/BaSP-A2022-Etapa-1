@@ -1,14 +1,14 @@
 header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-image:url(../assets/BackgroundHeader.png);
+    flex: 1 0 100%;
+    background-image:url(../assets/background-header.png);
     background-size: cover;
+    border: 1px solid red;
 }
 
 .card-info{
+    display: flex;
     justify-content: center;
-
+    flex-direction: column;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(4px);
 }
@@ -22,7 +22,7 @@ h1{
     color: #FFFFFF;
 }
 
-.card-info-barra{
+.card-info-bar{
     border-top:2px solid #AACE9B;
     margin: 0px 22px 0px 22px;
 }
