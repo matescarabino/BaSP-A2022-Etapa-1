@@ -2,6 +2,7 @@ body{
     font-family: 'Roboto';
     display: flex;
     flex-wrap: wrap;
+    font-weight: 400;
 }
 
 /*Larger phones and tablets*/

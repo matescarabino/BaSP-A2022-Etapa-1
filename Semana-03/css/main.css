@@ -3,18 +3,17 @@ main{
     flex-direction: column;
     text-align: center;
     width: 100%;
-    border: 1px solid red;
 }
 
 article{
     display: flex;
     text-align: center;
     flex-direction: column;
-    border: 1px solid red;
 }
+
 main h3{
     text-align: center;
-    margin-top: 10px;
+    margin-top: 15px;
     font-weight: 700;
     font-size: 40px;
     line-height: 47px; 
@@ -70,3 +69,38 @@ article p{
 #desc-bar-traceability{
     border-top: 3px solid #fff;
 }
+
+/* -------------- Functionalities -------------------- */
+.card-functionalities{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.card-functionalities-content{    
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.card-functionalities img{
+    float: left;
+    width: 141.42px;
+    height: 141.42px;
+    margin-right: 10px;
+}
+
+.card-functionalities h4{
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 20px;
+}
+
+.card-functionalities p{
+    font-size: 15px;
+    line-height: 20px;
+    color: #000000;
+}
+
+/* -------------- Contact -------------------- */
