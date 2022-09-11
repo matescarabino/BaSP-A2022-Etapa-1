@@ -175,6 +175,10 @@ input, select{
     border:1px solid #AACE9B;
 }
 
+#send-message:hover{
+    border:1px solid #000;
+} 
+
 #reset{
     width: 80px;
     height: 35px;
@@ -183,3 +187,76 @@ input, select{
     border:1px solid #F13312;
 }
 
+#reset:hover{
+    border:1px solid #000;
+}
+/* -------------- List -------------------- */
+.card-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-image:url(../assets/list-picture.png);
+}
+
+.card-list-info{
+    margin: 30px;
+    align-items: start;    
+    align-self: start;
+}
+
+.card-list-info h4{
+    text-align: start;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #373867;
+}
+
+.card-list-info ol{
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #373867;
+}
+
+.card-list-info li{
+    text-align: start;
+}
+
+.card-list-info li:hover{
+    text-decoration: underline;
+}
+
+/* -------------- Footer -------------------- */
+footer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    background: #AACE9B;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+#card-networks-icons{
+    width: 100%;
+}
+
+#card-networks-icons img{
+    width: 25px;
+    height: 25px;
+    margin: 35px 15px 32px 15px;
+}
+
+footer p{
+    align-self: center;    
+    margin-bottom: 15px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+}
