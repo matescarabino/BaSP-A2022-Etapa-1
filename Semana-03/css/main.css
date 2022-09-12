@@ -26,7 +26,7 @@ main h3{
 
 article p{
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     text-align: center;
     margin: 5px;
     font-weight: 500;
@@ -226,5 +226,35 @@ input, select{
 
 .card-list-info li:hover{
     text-decoration: underline;
+}
+
+
+/*------------- Larger phones and tablets ----------------*/
+@media (min-width: 480px) {
+
+    article p{
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    #card-info-text-secondary{
+        font-size: 16px;
+    }
+
+    .card-description h4{
+        margin-top: 20px;
+        font-size: 30px;
+    }
+
+    .card-description p{
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    .card-description img{
+        width: 416px;
+        height: auto;
+    }
+
 }
 

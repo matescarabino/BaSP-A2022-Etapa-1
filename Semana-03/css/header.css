@@ -56,3 +56,11 @@ p{
 }
 
 
+/*------------- Larger phones and tablets ----------------*/
+@media (min-width: 480px) {
+
+    .card-info{
+        width: 480px;
+    }
+
+}
