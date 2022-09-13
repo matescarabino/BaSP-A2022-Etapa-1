@@ -15,10 +15,10 @@
     </head>
 
     <body>
+        <div class="nav-mobile">
+            <img src="./assets/Icons/menu.svg" alt="Menu">
+        </div>
         <aside>
-            <div class="nav-mobile">
-                <img src="./assets/Icons/menu.svg" alt="Menu">
-            </div>
             <nav>
                 <ul>
                     <li>
@@ -44,30 +44,33 @@
                         </div>
                     </li>
                 </ul>
-                <h3>Contact Us</h3>
-                <div class="contact-Us-barra"></div>
-                <ul>
-                    <li>
-                        <div class="nav-button-contact">
-                            <img src="./assets/Icons/message-icon.png" alt="Mail">
-                            <p>trackgenix@gmail.com</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="nav-button-contact">
-                            <img src="./assets/Icons/call.png" alt="Call">
-                            <p>(000) 000-0000</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="nav-button-contact" id="nav-button-contact-adress">
-                            <img src="./assets/Icons/home-work.png" alt="Address">
-                            <p>1234 Somewhere Road #8254 Nashville, TN 00000-0000</p>
-                        </div>
-                    </li>
-                </ul>
             </nav>
+            <div class="contact-us">
+                <h3>Contact Us</h3>
+                    <div class="contact-us-barra"></div>
+                    <ul>
+                        <li>
+                            <div class="nav-button-contact">
+                                <img src="./assets/Icons/message-icon.png" alt="Mail">
+                                <p>trackgenix@gmail.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-button-contact">
+                                <img src="./assets/Icons/call.png" alt="Call">
+                                <p>(000) 000-0000</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-button-contact" id="nav-button-contact-adress">
+                                <img src="./assets/Icons/home-work.png" alt="Address">
+                                <p>1234 Somewhere Road #8254 Nashville, TN 00000-0000</p>
+                            </div>
+                        </li>
+                    </ul>
+            </div>
         </aside>
+        <div class="prueba">
         <header>
             <div class="card-info">
                 <h1>Trackgenix</h1>
@@ -147,40 +150,42 @@
             <section>
                 <h3>Functionalities</h3>
                 <div class="desc-bar"></div>
-                <div class="card-functionalities">
-                    <img src="./assets/Icons/hours-log.png" alt="Hours log">
-                    <div class="card-functionalities-content">
-                        <h4>Hours log</h4>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
-                        </p>
+                <div class="functionalities">
+                    <div class="card-functionalities">
+                        <img src="./assets/Icons/hours-log.png" alt="Hours log">
+                        <div class="card-functionalities-content">
+                            <h4>Hours log</h4>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="card-functionalities">
-                    <img src="./assets/Icons/resource-management.png" alt="Resource management">
-                    <div class="card-functionalities-content">
-                        <h4>Resource management</h4>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
-                        </p>
+                    <div class="card-functionalities">
+                        <img src="./assets/Icons/resource-management.png" alt="Resource management">
+                        <div class="card-functionalities-content">
+                            <h4>Resource management</h4>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="card-functionalities">
-                    <img src="./assets/Icons/reports.png" alt="Reports">
-                    <div class="card-functionalities-content">
-                        <h4>Reports</h4>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
-                        </p>
+                    <div class="card-functionalities">
+                        <img src="./assets/Icons/reports.png" alt="Reports">
+                        <div class="card-functionalities-content">
+                            <h4>Reports</h4>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="card-functionalities">
-                    <img src="./assets/Icons/multiple-roles.png" alt="Multiple roles">
-                    <div class="card-functionalities-content">
-                        <h4>Multiple roles</h4>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
-                        </p>
+                    <div class="card-functionalities">
+                        <img src="./assets/Icons/multiple-roles.png" alt="Multiple roles">
+                        <div class="card-functionalities-content">
+                            <h4>Multiple roles</h4>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -205,7 +210,7 @@
                         <label for="email">Email</label>
                         <input type="mail" id="email" name="email" placeholder="Your Email Here" required>
                     </div>
-                    <div class="form-text-field">
+                    <div class="form-text-field" id="form-text-field-textarea">
                         <label for="message">Message</label>
                         <textarea name="message" form="message" required>Your Message Here</textarea>
                     </div>
@@ -272,6 +277,8 @@
             <p>Rosario, Argentina</p>
             <p>Copyright © 2022 Radium Rocket. All rights reserved</p>
         </footer>
+        </div>
+
     </body>
 
 </html>

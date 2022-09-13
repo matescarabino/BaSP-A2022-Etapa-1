@@ -258,3 +258,50 @@ input, select{
 
 }
 
+/*Larger tablets in landscape, laptops and small desktops*/
+@media (min-width: 768px) {
+
+    .functionalities{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .card-functionalities{
+        width: 45%;
+        height: auto;
+    }
+
+    .form{
+        display:flex;
+        flex-direction: row; 
+        flex-wrap: wrap;  
+        justify-content: space-around;
+    }
+
+    .form-text-field{
+        width: 35%;
+    }
+
+    #form-text-field-textarea{
+        width: 85%;
+    }
+
+    .form-text-field:nth-child(3){
+        margin-right: 50%;
+    }
+
+    .form-button-field{
+        width: 85%;
+    }
+
+
+
+
+
+
+
+
+
+}

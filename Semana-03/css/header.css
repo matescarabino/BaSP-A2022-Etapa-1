@@ -1,6 +1,5 @@
 header{
     display: flex;
-    flex: 1 0 100%;
     background-image:url(../assets/background-header.png);
     background-size: cover;
 }
@@ -62,5 +61,11 @@ p{
     .card-info{
         width: 480px;
     }
+
+}
+
+/*Larger tablets in landscape, laptops and small desktops*/
+@media (min-width: 768px) {
+    
 
 }

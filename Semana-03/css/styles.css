@@ -1,10 +1,14 @@
 body{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     height: 100vh;
     font-family: 'Roboto';
     font-weight: 400;
 }
+
+
+
 
 /*------------- Larger phones and tablets ----------------*/
 @media (min-width: 480px) {
@@ -16,6 +20,9 @@ body{
 
     body{
         background-color: blue;
+    }
+    .prueba{
+        margin-left: 152px;
     }
 }
 
