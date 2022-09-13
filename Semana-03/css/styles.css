@@ -18,7 +18,7 @@ body{
 /*Larger tablets in landscape, laptops and small desktops*/
 @media (min-width: 768px) {
 
-    .prueba{
+    .content-right{
         margin-left: 152px;
     }
 }
