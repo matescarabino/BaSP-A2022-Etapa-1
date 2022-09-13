@@ -16,7 +16,7 @@ aside{
     border: 1px solid #000;
 }
 
- img:hover{
+.nav-mobile img:hover{
     border: 1px solid #fff;
     border-radius: 5px;
 }
