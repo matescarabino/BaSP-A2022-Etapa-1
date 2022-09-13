@@ -14,11 +14,6 @@ header{
 
 h1{
     margin: 20px 0px 0px 22px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 47px;
-    color: #FFFFFF;
 }
 
 .card-info-bar{
@@ -28,7 +23,6 @@ h1{
 
 h2{
     margin: 17px 0px 50px 22px;
-    font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
@@ -47,8 +41,6 @@ p{
     display: flex;
     text-align: start;
     margin-bottom: 25px;
-    font-style: normal;
-    font-weight: 400;
     font-size: 16px;
     line-height: 30px;
     color: rgba(255, 255, 255, 0.75);

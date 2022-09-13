@@ -29,3 +29,24 @@ footer p{
     line-height: 14px;
     color: #000000;
 }
+
+/*Larger desktops and monitors*/
+@media (min-width: 1024px) {
+
+    footer{
+        height: 176px;
+    }
+    
+    #card-networks-icons img{
+        width: 38px;
+        height: 38px;
+        margin: 35px 25px 32px 25px;
+    }
+    
+    footer p{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
