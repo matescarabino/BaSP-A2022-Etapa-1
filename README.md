@@ -4,8 +4,9 @@
 - Trackgenix is ​​a web system which facilitates the registration of hours worked by each employee in each project and work team.
 
 - How to open:
-1- Enter the folder "Semana-03"
-2- Run the file "index.html" on your browser
+1. Download the repository to your computer
+2. Open the folder of the week you want to execute
+2. Run the file "index.html" on your browser
 
 ## Work 📋
 ### Week 00 **Figma**
@@ -28,6 +29,14 @@ To see working site [click here](https://matescarabino.github.io/BaSP-A2022-Etap
 - We fixed the CSS from last week with the corrections made by the tutors.
 - We had to do the same that in week 02 but this time we had to use Flexbox propieties in CSS to give style to the site.
 - We also had to make the site responsive using breakpoints in with media queries and making focus on develop mobile first.
+
+### Week 04 **JavaScript**
+To see working site [click here](https://matescarabino.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html)
+
+- Considering the feedback provided by the tutors, we improve what was delivered in last week's problem by implementing what was corrected.
+- We realize the JavaScript exercises applying the concepts learned from the asynchronous material.
+
+
 
 ## Author ✒️
 - **Mateo Scarabino** - [matescarabino](https://github.com/matescarabino)
