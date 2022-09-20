@@ -2,7 +2,6 @@ body{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    height: 100vh;
     font-family: 'Roboto';
 }
 
@@ -31,7 +30,7 @@ p{
 }
 
 /*Larger tablets in landscape, laptops and small desktops*/
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
 
     .content-right{
         margin-left: 152px;

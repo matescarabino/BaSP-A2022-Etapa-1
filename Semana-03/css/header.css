@@ -1,5 +1,6 @@
 header{
     display: flex;
+    height: 100vh;
     background-image:url(../assets/background-header.png);
     background-size: cover;
 }
@@ -13,7 +14,7 @@ header{
 }
 
 h1{
-    margin: 20px 0px 0px 22px;
+    margin-left: 22px;
 }
 
 .card-info-bar{
@@ -59,16 +60,14 @@ p{
 
     .card-info{
         margin-left: 30px;
-        height: 550px;
     }
 }
 
 /*Larger desktops and monitors*/
 @media (min-width: 1024px) {
-   
+
     .card-info{
         justify-content: start;
-        height: 900px;
     }
 
     h1{

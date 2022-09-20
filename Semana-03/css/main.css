@@ -232,7 +232,7 @@ button[type="reset"]:hover {
     text-decoration: underline;
 }
 
-/*------------- Larger phones and tablets ----------------*/
+/*Larger tablets in landscape, laptops and small desktops*/
 @media (min-width: 480px) {
 
     article p {
@@ -254,15 +254,6 @@ button[type="reset"]:hover {
         font-size: 16px;
         line-height: 25px;
     }
-
-    .card-description img {
-        width: 416px;
-        height: auto;
-    }
-}
-
-/*Larger tablets in landscape, laptops and small desktops*/
-@media (min-width: 768px) {
 
     .card-description {
         display: flex;
@@ -301,6 +292,11 @@ button[type="reset"]:hover {
     .card-functionalities {
         width: 45%;
         height: auto;
+    }
+
+    .card-functionalities img {
+        width: 100px;
+        height: 100px;
     }
 
     .form {
@@ -374,6 +370,11 @@ button[type="reset"]:hover {
     .card-functionalities p {
         font-size: 20px;
         line-height: 23px;
+    }
+
+    .card-functionalities img {
+        width: 141.42px;
+        height: 141.42px;
     }
 
     /* -------------- List -------------------- */
