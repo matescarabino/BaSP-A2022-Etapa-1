@@ -36,6 +36,11 @@ To see working site [click here](https://matescarabino.github.io/BaSP-A2022-Etap
 - Considering the feedback provided by the tutors, we improve what was delivered in last week's problem by implementing what was corrected.
 - We realize the JavaScript exercises applying the concepts learned from the asynchronous material.
 
+### Week 05 **JavaScript and DOM**
+To see working site [click here](https://matescarabino.github.io/BaSP-A2022-Etapa-1/Semana-05/views/index.html)
+
+- We created an login and a employee signup form, using as base the landing page already developed.
+- We validated the user's data entries through javascript without the use of html.
 
 
 ## Author ✒️

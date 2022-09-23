@@ -1,0 +1,392 @@
+main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+article {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+main h3 {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+}
+
+.desc-bar {
+    margin: 10px 5px 0px 5px;
+    border-top: 4px solid #D9D9D9;
+}
+
+article p {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    color: #373867;
+}
+
+#card-info-text-secondary {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    color: #49A37B;
+}
+
+/* -------------- Why choose us? -------------------- */
+/* Productivity Booster */
+.card-description h4 {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 20px;
+}
+
+.card-description img {
+    width: 90%;
+    height: auto;
+}
+
+#desc-bar-productivity {
+    border-top: 3px solid #286276;
+}
+
+/* Work Traceability and Decision making */
+.card-description:nth-of-type(4),
+.card-description:nth-of-type(6) {
+    background-color: #D9D9D9;
+}
+
+#desc-bar-traceability {
+    border-top: 3px solid #fff;
+}
+
+/* -------------- Functionalities -------------------- */
+.card-functionalities {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.card-functionalities-content {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.card-functionalities img {
+    float: left;
+    width: 141.42px;
+    height: 141.42px;
+    margin-right: 10px;
+}
+
+.card-functionalities h4 {
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 20px;
+}
+
+.card-functionalities p {
+    font-size: 15px;
+    line-height: 20px;
+    color: #000000;
+}
+
+/* -------------- Contact -------------------- */
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    margin-bottom: 50px;
+}
+
+.form-text-field {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: start;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.form label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #373867;
+}
+
+input,
+select {
+    height: 25px;
+    margin-top: 10px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+}
+
+.form textarea {
+    height: 80px;
+    margin-top: 10px;
+    border-radius: 4px;
+    opacity: 0.5;
+}
+
+.form-button-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.form-button-field button {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-button-field img {
+    align-self: center;
+    width: 16px;
+    height: 16px;
+}
+
+.form-button-field p {
+    margin: 8px 0px 0px 5px;
+    font-size: 13px;
+    line-height: 15px;
+    color: #373867;
+}
+
+button[type="submit"] {
+    width: 125px;
+    height: 35px;
+    border-radius: 5px;
+    background: #AACE9B;
+    border: 1px solid #AACE9B;
+}
+
+button[type="submit"]:hover {
+    border: 1px solid #000;
+}
+
+button[type="reset"] {
+    width: 80px;
+    height: 35px;
+    border-radius: 5px;
+    background: #F13312;
+    border: 1px solid #F13312;
+}
+
+button[type="reset"]:hover {
+    border: 1px solid #000;
+}
+
+/* -------------- List -------------------- */
+.card-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-image: url(../assets/list-picture.png);
+}
+
+.card-list-info {
+    margin: 30px;
+    align-items: start;
+    align-self: start;
+}
+
+.card-list-info h4 {
+    text-align: start;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #373867;
+}
+
+.card-list-info ol {
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #373867;
+}
+
+.card-list-info li {
+    text-align: start;
+}
+
+.card-list-info li:hover {
+    text-decoration: underline;
+}
+
+/*Larger tablets in landscape, laptops and small desktops*/
+@media (min-width: 480px) {
+
+    article p {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    #card-info-text-secondary {
+        font-size: 16px;
+    }
+
+    .card-description h4 {
+        margin-top: 20px;
+        font-size: 30px;
+        line-height: 25px;
+    }
+
+    .card-description p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    .card-description {
+        display: flex;
+        flex-direction: row;
+        padding: 5%;
+    }
+
+    .card-description-text {
+        flex: 1 0 40%;
+        text-align: start;
+    }
+
+    .card-description-text p {
+        text-align: start;
+    }
+
+    .card-description img {
+        width: 300px;
+        height: 234px;
+        margin: 15px;
+    }
+
+    .card-description:nth-of-type(4),
+    .card-description:nth-of-type(6) {
+        flex-direction: row-reverse;
+    }
+
+    .functionalities {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .card-functionalities {
+        width: 45%;
+        height: auto;
+    }
+
+    .card-functionalities img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .form-text-field {
+        width: 35%;
+    }
+
+    #form-text-field-textarea {
+        width: 85%;
+    }
+
+    .form-text-field textarea {
+        height: 224px;
+    }
+
+    .form-text-field:nth-child(3) {
+        margin-right: 50%;
+    }
+
+    .form-button-field {
+        width: 85%;
+    }
+}
+
+/*Larger desktops and monitors*/
+@media (min-width: 1024px) {
+
+    article p {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    #card-info-text-secondary {
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .card-description h4 {
+        font-size: 40px;
+        line-height: 47px;
+    }
+
+    .card-description p {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .card-description img {
+        width: 513px;
+        height: 400px;
+    }
+
+    /* -------------- Functionalities -------------------- */
+    .functionalities {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .card-functionalities h4 {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .card-functionalities p {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .card-functionalities img {
+        width: 141.42px;
+        height: 141.42px;
+    }
+
+    /* -------------- List -------------------- */
+    .card-list-info h4 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .card-list-info ol {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+    }
+}

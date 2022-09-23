@@ -1,0 +1,115 @@
+aside{
+    display: none;
+}
+
+.nav-mobile{
+    height: 0px;
+}
+
+.nav-mobile img{
+    position:fixed;
+    z-index: +1;
+    width: 38px;
+    height: 38px;
+    margin: 10px;
+    padding: 3px;
+    border-radius: 15px;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+.nav-mobile img:hover{
+    background-color: #d9d9d9;
+    border: 1px solid #000;
+}
+
+
+/*Larger tablets in landscape, laptops and small desktops*/
+@media (min-width: 1024px) {
+    .nav-mobile{
+        display:none;
+    }
+
+    aside{
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 152px;
+        height: 100vh;
+        left: 0;
+        color: #F13312;
+        background: #FFFFFF;
+    }
+
+    .nav-button{
+        width: 150px;
+        height: 48px;
+        margin-bottom: 5px;
+        border:1px solid #ffffff;
+    }
+
+    .nav-button p{
+        margin: 15px 54px 15px 56px;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .nav-button img{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        margin: 12px 107px 12px 20px;
+        color: #F13312;
+    }
+
+    .nav-button:hover{
+        border: 1px solid #F13312;
+    }
+
+    aside p {
+        color: #F13312;
+    }
+
+    aside h3{
+        margin-left: 11px;
+        margin-top: 30%;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .contact-us-barra{
+        width: 81px;
+        margin-left: 8px;
+        border: 1px solid #F13312;
+    }
+
+    .nav-button-contact{
+        width: 146px;
+        height: 48px;
+        margin-bottom: 5px;
+        border:1px solid #ffffff;
+    }
+
+    .nav-button-contact p{
+        margin: 15px 11px 15px 35px;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .nav-button-contact img{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        margin: 12px 107px 12px 5px;
+        color: #F13312;
+    }
+
+    #nav-button-contact-adress img{
+        margin: 22px 107px 12px 5px;
+    }
+
+}
