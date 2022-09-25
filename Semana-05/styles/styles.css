@@ -29,6 +29,10 @@ p{
     color: #000000;
 }
 
+a{
+    text-decoration: none;
+}
+
 /*Larger tablets in landscape, laptops and small desktops*/
 @media (min-width: 1024px) {
 

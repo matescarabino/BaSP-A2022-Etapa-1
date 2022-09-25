@@ -50,7 +50,7 @@
         </nav>
         <div class="contact-us">
             <h3>Contact Us</h3>
-            <div class="contact-us-barra"></div>
+            <div class="contact-us-bar"></div>
             <ul>
                 <li>
                     <div class="nav-button-contact">
@@ -80,13 +80,13 @@
             <div class="card-field">
                 <label for="Email">Email</label>
                 <input type="text" id="emailInput">
-                <div class="card__campo__error" id="errorMail">&nbsp;</div>
+                <div id="errorMail">&nbsp;</div>
             </div>
 
             <div class="card-field">
                 <label for="password">Password</label>
                 <input type="password" id="passwordInput">
-                <div class="card__campo__error" id="errorPassword">&nbsp;</div>
+                <div id="errorPassword">&nbsp;</div>
             </div>
 
             <div class="card-button">
@@ -94,8 +94,16 @@
             </div>
 
             <div class="card-error-message" id="errorMessage"></div>
-
         </form>
+
+        <!-- Modal -->
+        <div id="modalRegistro" class="modal">
+            <div class="modal-content">
+                <p class="modal-message" id="modal-message"></p>
+                <h4 id="modal-body"></h4>
+                <p class="modal-close" id="close">CONFIRM</p>
+            </div>
+        </div>
     </main>
     <script src="../javascript/login.js"></script>
 </body>
