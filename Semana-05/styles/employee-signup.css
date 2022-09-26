@@ -1,0 +1,26 @@
+
+#errorMail ,#errorPassword{
+    color: red
+}
+
+
+/*Larger tablets in landscape, laptops and small desktops*/
+@media (min-width: 480px) {
+
+    .card-field{
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    .modal-content {
+        width: 450px;
+    }
+}
+
+/*Larger desktops and monitors*/
+@media (min-width: 1024px) {
+
+    main {
+        margin-left: 152px;
+    }
+}

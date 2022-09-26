@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/sidebar.css">
     <link rel="stylesheet" href="../styles/footer.css">
-    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/employee-signup.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <title>Login</title>
+    <title>Employee SignUp</title>
 </head>
 <body>
     <div class="nav-mobile">
@@ -77,7 +77,55 @@
     </aside>
     <main>
         <form class="card" name="form" id="form">
-            <h2 class="card-title">Login</h2>
+            <h2 class="card-title">Employee SignUp</h2>
+
+            <div class="card-field">
+                <label for="name">Name</label>
+                <input type="text" id="nameInput">
+                <div id="errorName">&nbsp;</div>
+            </div>
+
+            <div class="card-field">
+                <label for="surname">Surname</label>
+                <input type="text" id="surnameInput">
+                <div id="errorSurname">&nbsp;</div>
+            </div>
+
+            <div class="card-field">
+                <label for="dni">DNI</label>
+                <input type="text" id="dniInput">
+                <div id="errorDNI">&nbsp;</div>
+            </div>
+
+            <div class="card-field">
+                <label for="birth">Date of birth</label>
+                <input type="text" id="birthInput">
+                <div id="errorBirth">&nbsp;</div>
+            </div>
+
+            <div class="card-field">
+                <label for="phone">Phone</label>
+                <input type="text" id="phoneInput">
+                <div id="errorPhone">&nbsp;</div>
+            </div>
+
+            <div class="card-field">
+                <label for="address">Address</label>
+                <input type="text" id="addressInput">
+                <div id="errorAddress">&nbsp;</div>
+            </div>
+
+            <div class="card-field">
+                <label for="location">Location</label>
+                <input type="text" id="locationInput">
+                <div id="errorLocation">&nbsp;</div>
+            </div>
+
+            <div class="card-field">
+                <label for="postalCode">Postal Code</label>
+                <input type="text" id="postalCodeInput">
+                <div id="errorPostalCode">&nbsp;</div>
+            </div>
 
             <div class="card-field">
                 <label for="Email">Email</label>
@@ -91,8 +139,14 @@
                 <div id="errorPassword">&nbsp;</div>
             </div>
 
+            <div class="card-field">
+                <label for="repeatPassword">Repeat Password</label>
+                <input type="password" id="repeatPasswordInput">
+                <div id="errorRepeatPassword">&nbsp;</div>
+            </div>
+
             <div class="card-button">
-                <button>Login</button>
+                <button>Create</button>
             </div>
 
             <div class="card-error-message" id="errorMessage"></div>
@@ -107,6 +161,6 @@
             </div>
         </div>
     </main>
-    <script src="../javascript/login.js"></script>
+    <script src="../javascript/employee-signup.js"></script>
 </body>
 </html>
