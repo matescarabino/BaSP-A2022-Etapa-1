@@ -128,11 +128,6 @@ main {
     outline: none;
 }
 
-.modal-content p:hover {
-    color: #fff;
-    background-color: #007282;
-}
-
 #modal-body{
     margin-bottom: 10px;
     color: red;

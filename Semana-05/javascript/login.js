@@ -1,15 +1,25 @@
-//Call onFocus/onBlur validate function
-validateOnFocus();
+var validates = {
+    mail: false,
+    password: false
+};
 
-function validateOnFocus() {
-    // validate Mail ------------------------------------------------------------------------
+var errorMailMessage = 'Enter a valid email.';
+var errorPasswordMessage = 'It must contain at least one lowercase, a number and at least 8 characters.';
+
+validateMail();
+validatePassword();
+
+function validateMail() {
     var mail = document.getElementById('emailInput');
     var mailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 
     mail.onblur = function () {
         if (!((mail.value).toLowerCase()).match(mailExpression)) {
             mail.classList.add('invalid');
-            errorMail.innerHTML = 'Enter a valid email.';
+            errorMail.innerHTML = errorMailMessage;
+            validates.mail = false;
+        }else{
+            validates.mail = true;
         };
     };
     mail.onfocus = function () {
@@ -18,8 +28,9 @@ function validateOnFocus() {
             errorMail.innerHTML = "&nbsp;";
         };
     };
+}
 
-    // validate password ------------------------------------------------------------------------
+function validatePassword(){
     var password = document.getElementById('passwordInput');
 
     password.onblur = function () {
@@ -53,7 +64,8 @@ function validateOnFocus() {
 
         if (!passExpression) {
             password.classList.add('invalid');
-            errorPassword.innerHTML = 'It must contain at least one lowercase, a number and at least 8 characters.';
+            errorPassword.innerHTML = errorPasswordMessage;
+            validates.password = false;
         };
     };
 
@@ -61,59 +73,25 @@ function validateOnFocus() {
         if (password.classList.contains('invalid')) {
             password.classList.remove('invalid');
             errorPassword.innerHTML = "&nbsp;";
+            validates.password = true;
         };
     };
 }
 
-//Validación on Submit --------------------------------------------------------------------
+//Validate on Submit --------------------------------------------------------------------
 document.form.onsubmit = function (event) {
-    // validate Mail ------------------------------------------------------------------------
     var mail = document.getElementById('emailInput');
-    var mailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-
-    if (!((mail.value).toLowerCase()).match(mailExpression)) {
-        mail.classList.add('invalid');
-        errorMail.innerHTML = 'Enter a valid email.'
-        showModal(mail.value,false);
-        return false;
-    };
-
-    // validate password ------------------------------------------------------------------------
     var password = document.getElementById('passwordInput');
-    var hasBigLetter = false;
-    var hasSmallLetter = false;
-    var hasNumber = false;
-    var hasLenght = false;
 
-    for (var i = 0; i < password.value.length; i++) {
-        var charCode = password.value.charCodeAt(i);
-        if (charCode > 47 && charCode < 58) {
-            hasNumber = true;
-        };
-        if (charCode > 64 && charCode < 91) {
-            hasBigLetter = true;
-        };
-        if (charCode > 96 && charCode < 123) {
-            hasSmallLetter = true;
-        };
-    };
+    if(validates.mail === false){
+        mail.classList.add('invalid');
+        errorMail.innerHTML = errorMailMessage;
+    }
 
-    if (password.value.length > 7) {
-        hasLenght = true;
-    };
-
-    if (hasBigLetter && hasSmallLetter && hasNumber && hasLenght) {
-        var passExpression = true;
-    } else {
-        var passExpression = false;
-    };
-
-    if (!passExpression) {
+    if(validates.password === false){
         password.classList.add('invalid');
-        errorPassword.innerHTML = 'It must contain at least one lowercase, a number and at least 8 characters.';
-        showModal(false,password.value);
-        return false;
-    };
+        errorPassword.innerHTML = errorPasswordMessage;
+    }
 
     showModal(mail.value,password.value);
 
@@ -128,37 +106,49 @@ function showModal(mail,password) {
 
     modal.style.display = "block";
 
-    if (mail != false && password != false) {
-        modalBody.innerHTML = `Mail: ${mail}<br>`;
+    if (validates.mail === true && validates.password === true) {
+        modalBody.innerHTML += `Mail: ${mail}<br>`;
         modalBody.innerHTML += `Password: ${password}`;
         modalBody.style.color = '#000';
 
         modalMessage.style.backgroundColor = "#007282";
-        modalMessage.innerHTML = 'SUCCESSFUL LOGIN'
-
+        modalMessage.innerHTML = 'SUCCESS'
+        console.log('onichan')
         var success = true;
-    } else if (password === false) {
-        modalMessage.innerHTML = 'ERROR';
-        modalBody.innerHTML = 'Enter a valid email.';
+    } else {
 
-    } else if (mail === false) {
-        modalMessage.innerHTML = 'ERROR';
-        modalBody.innerHTML = 'Password must contain at least one lowercase, a number and at least 8 characters.';
-    };
+        if (validates.mail === false) {
+            modalMessage.innerHTML = 'ERROR';
+            modalBody.innerHTML += `Mail: ${errorMailMessage}<br>`;
+        };
+
+        if (validates.password === false) {
+            modalMessage.innerHTML = 'ERROR';
+            modalBody.innerHTML += `Password: ${errorPasswordMessage}<br>`;;
+        };
+    }
 
     span.onclick = function () {
         modal.style.display = "none";
+        modalBody.innerHTML = "&nbsp;";
         if(success){
             document.getElementById("form").submit();
+            redirectHome();
         }
     }
 
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
+            modalBody.innerHTML = "&nbsp;";
             if(success){
                 document.getElementById("form").submit();
+                redirectHome();
             }
         }
     }
+}
+
+function redirectHome(){
+    window.location.href = "./index.html";
 }
