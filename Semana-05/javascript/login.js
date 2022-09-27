@@ -3,20 +3,20 @@ var validates = {
     password: false
 };
 
-var errorMailMessage = 'Enter a valid email.';
-var errorPasswordMessage = 'It must contain at least one lowercase, a number and at least 8 characters.';
+var mailErrorMessage = 'Enter a valid email.';
+var passwordErrorMessage = 'It must contain at least one lowercase, a number and at least 8 characters.';
 
-validateMail();
-validatePassword();
+mailValidate();
+passwordValidate();
 
-function validateMail() {
+function mailValidate() {
     var mail = document.getElementById('emailInput');
     var mailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 
     mail.onblur = function () {
         if (!((mail.value).toLowerCase()).match(mailExpression)) {
             mail.classList.add('invalid');
-            errorMail.innerHTML = errorMailMessage;
+            mailError.innerHTML = mailErrorMessage;
             validates.mail = false;
         }else{
             validates.mail = true;
@@ -25,12 +25,12 @@ function validateMail() {
     mail.onfocus = function () {
         if (mail.classList.contains('invalid')) {
             mail.classList.remove('invalid');
-            errorMail.innerHTML = "&nbsp;";
+            mailError.innerHTML = "&nbsp;";
         };
     };
 }
 
-function validatePassword(){
+function passwordValidate(){
     var password = document.getElementById('passwordInput');
 
     password.onblur = function () {
@@ -64,7 +64,7 @@ function validatePassword(){
 
         if (!passExpression) {
             password.classList.add('invalid');
-            errorPassword.innerHTML = errorPasswordMessage;
+            passwordError.innerHTML = passwordErrorMessage;
             validates.password = false;
         };
     };
@@ -72,11 +72,11 @@ function validatePassword(){
     password.onfocus = function () {
         if (password.classList.contains('invalid')) {
             password.classList.remove('invalid');
-            errorPassword.innerHTML = "&nbsp;";
+            passwordError.innerHTML = "&nbsp;";
             validates.password = true;
         };
     };
-}
+};
 
 //Validate on Submit --------------------------------------------------------------------
 document.form.onsubmit = function (event) {
@@ -85,18 +85,18 @@ document.form.onsubmit = function (event) {
 
     if(validates.mail === false){
         mail.classList.add('invalid');
-        errorMail.innerHTML = errorMailMessage;
-    }
+        mailError.innerHTML = mailErrorMessage;
+    };
 
     if(validates.password === false){
         password.classList.add('invalid');
-        errorPassword.innerHTML = errorPasswordMessage;
-    }
+        passwordError.innerHTML = passwordErrorMessage;
+    };
 
     showModal(mail.value,password.value);
 
     event.preventDefault();
-}
+};
 
 function showModal(mail,password) {
     var modal = document.getElementById("modalRegistro");
@@ -119,12 +119,12 @@ function showModal(mail,password) {
 
         if (validates.mail === false) {
             modalMessage.innerHTML = 'ERROR';
-            modalBody.innerHTML += `Mail: ${errorMailMessage}<br>`;
+            modalBody.innerHTML += `Mail: ${mailErrorMessage}<br>`;
         };
 
         if (validates.password === false) {
             modalMessage.innerHTML = 'ERROR';
-            modalBody.innerHTML += `Password: ${errorPasswordMessage}<br>`;;
+            modalBody.innerHTML += `Password: ${passwordErrorMessage}<br>`;;
         };
     }
 
@@ -134,8 +134,8 @@ function showModal(mail,password) {
         if(success){
             document.getElementById("form").submit();
             redirectHome();
-        }
-    }
+        };
+    };
 
     window.onclick = function (event) {
         if (event.target == modal) {
@@ -144,11 +144,11 @@ function showModal(mail,password) {
             if(success){
                 document.getElementById("form").submit();
                 redirectHome();
-            }
-        }
-    }
-}
+            };
+        };
+    };
+};
 
 function redirectHome(){
     window.location.href = "./index.html";
-}
+};

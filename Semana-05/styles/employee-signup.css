@@ -1,8 +1,18 @@
 
-#errorMail ,#errorPassword{
+#nameError,
+#surnameError,
+#dniError,
+#birthError,
+#phoneError,
+#addressError,
+#locationError,
+#postalCodeError,
+#mailError,
+#passwordError,
+#repeatPasswordError {
+    text-align: left;
     color: red
 }
-
 
 /*Larger tablets in landscape, laptops and small desktops*/
 @media (min-width: 480px) {

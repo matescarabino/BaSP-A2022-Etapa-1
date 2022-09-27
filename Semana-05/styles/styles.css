@@ -98,7 +98,8 @@ main {
     border-color: red !important;
 }
 
-#errorMail ,#errorPassword{
+#mailError,
+#passwordError{
     color: red
 }
 
