@@ -15,7 +15,7 @@ var validates = {
 var nameErrorMessage = 'Must have more than 3 letters.'
 var surnameErrorMessage = 'Must have more than 3 letters.'
 var dniErrorMessage = 'Must have more than 7 numbers.'
-var birthErrorMessage = 'Select a date.'
+var birthErrorMessage = 'Select a valid date.'
 var phoneErrorMessage = 'Must have more than 10 numbers.'
 var addressErrorMessage = 'Must have at least 5 characters with letters, numbers and a space in between.'
 var locationErrorMessage = 'Must have at least 3 characters with alphanumeric text.'
@@ -175,7 +175,15 @@ function birthValidate() {
     var birth = document.getElementById('birthInput');
 
     birth.onblur = function () {
-        if (birth.value == '') {
+
+        var [year, month, day ] = birth.value.split('-');
+
+        var today = new Date().toLocaleDateString();
+        var [ ,  , yearToday] = today.split('/');
+
+        var age = (yearToday - year);
+
+        if (birth.value == '' || (age > 100) || (age < 0)) {
             birth.classList.add('invalid');
             birthError.innerHTML = birthErrorMessage;
             validates.birth = false;
@@ -585,8 +593,8 @@ function showModal(name
         modalBody.innerHTML += `Password: ${password}`;
 
         modalBody.style.color = '#000';
-        modalMessage.style.backgroundColor = "#007282";
-        modalMessage.innerHTML = 'SUCCESS'
+        modalMessage.style.backgroundColor = "#373867";
+        modalMessage.innerHTML = 'SUCCESS';
         var success = true;
 
     } else {
@@ -628,11 +636,11 @@ function showModal(name
         };
         if (validates.password === false) {
             modalMessage.innerHTML = 'ERROR';
-            modalBody.innerHTML += `PASSWORD: ${passwordErrorMessage}<br>`;;
+            modalBody.innerHTML += `PASSWORD: ${passwordErrorMessage}<br>`;
         };
         if (validates.repeatPassword === false) {
             modalMessage.innerHTML = 'ERROR';
-            modalBody.innerHTML += `REPEAT PASSWORD: ${repeatPasswordErrorMessage}<br>`;;
+            modalBody.innerHTML += `REPEAT PASSWORD: ${repeatPasswordErrorMessage}<br>`;
         };
     }
 

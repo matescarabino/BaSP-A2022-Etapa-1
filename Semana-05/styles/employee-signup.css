@@ -11,8 +11,9 @@
 #passwordError,
 #repeatPasswordError {
     text-align: left;
-    color: red
+    color: #F13312
 }
+
 
 /*Larger tablets in landscape, laptops and small desktops*/
 @media (min-width: 480px) {
@@ -39,13 +40,6 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-    }
-
-    .card-title{
-        width: 100%;
-        margin-left: 0px;
-        font-size: 25px;
-        color: #000;
     }
 
     .card-field{

@@ -107,18 +107,18 @@ function showModal(mail,password) {
     modal.style.display = "block";
 
     if (validates.mail === true && validates.password === true) {
-        modalBody.innerHTML += `Mail: ${mail}<br>`;
+        modalBody.innerHTML = `Mail: ${mail}<br>`;
         modalBody.innerHTML += `Password: ${password}`;
 
         modalBody.style.color = '#000';
-        modalMessage.style.backgroundColor = "#007282";
+        modalMessage.style.backgroundColor = "#373867";
         modalMessage.innerHTML = 'SUCCESS'
         var success = true;
     } else {
 
         if (validates.mail === false) {
             modalMessage.innerHTML = 'ERROR';
-            modalBody.innerHTML += `Mail: ${mailErrorMessage}<br>`;
+            modalBody.innerHTML = `Mail: ${mailErrorMessage}<br>`;
         };
 
         if (validates.password === false) {
