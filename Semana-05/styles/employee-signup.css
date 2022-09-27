@@ -33,4 +33,27 @@
     main {
         margin-left: 152px;
     }
+
+    .card{
+        border: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card-title{
+        width: 100%;
+        margin-left: 0px;
+        font-size: 25px;
+        color: #000;
+    }
+
+    .card-field{
+        width: 35%;
+        margin-left: 10%;
+    }
+
+    .card-field-error{
+        height: 40px;
+    }
 }

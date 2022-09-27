@@ -109,11 +109,10 @@ function showModal(mail,password) {
     if (validates.mail === true && validates.password === true) {
         modalBody.innerHTML += `Mail: ${mail}<br>`;
         modalBody.innerHTML += `Password: ${password}`;
-        modalBody.style.color = '#000';
 
+        modalBody.style.color = '#000';
         modalMessage.style.backgroundColor = "#007282";
         modalMessage.innerHTML = 'SUCCESS'
-        console.log('onichan')
         var success = true;
     } else {
 

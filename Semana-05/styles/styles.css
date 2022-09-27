@@ -40,7 +40,14 @@ main {
     width: 100%;
 }
 
+.card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .card-title{
+    width: 100%;
     font-size: 25px;
     color: #000;
 }
@@ -57,7 +64,8 @@ main {
     flex-direction: row;
     justify-content: start;
     width: 100%;
-    margin-top: 15px 0 5px 0;
+    margin-top: 5px;
+    font-weight: bold;
 }
 
 .card-field input {
@@ -139,7 +147,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 25px;
     background-color: red;
     color: #fff;
     font-size: 18px;
@@ -163,9 +170,15 @@ main {
     cursor: pointer;
     outline: none;
 }
+.modal-close:hover{
+    color: #fff;
+    background-color: #007282;
+}
 
 #modal-body{
-    margin-bottom: 10px;
+    text-align: left;
+    margin: 5%;
+    line-height: 23px;
     color: red;
 }
 

@@ -17,11 +17,11 @@ var surnameErrorMessage = 'Must have more than 3 letters.'
 var dniErrorMessage = 'Must have more than 7 numbers.'
 var birthErrorMessage = 'Select a date.'
 var phoneErrorMessage = 'Must have more than 10 numbers.'
-var addressErrorMessage = 'At least 5 characters with letters, numbers and a space in between.'
-var locationErrorMessage = 'Alphanumeric text and must have more than 3 letters.'
+var addressErrorMessage = 'Must have at least 5 characters with letters, numbers and a space in between.'
+var locationErrorMessage = 'Must have at least 3 characters with alphanumeric text.'
 var postalCodeErrorMessage = 'Must have between 4 and 5 numbers.'
 var mailErrorMessage = 'Enter a valid email.';
-var passwordErrorMessage = 'It must contain at least one lowercase, a number and at least 8 characters.';
+var passwordErrorMessage = 'Must contain at least one lowercase, a number and at least 8 characters.';
 var repeatPasswordErrorMessage = 'Passwords must match.'
 
 nameValidate();
@@ -175,7 +175,7 @@ function birthValidate() {
     var birth = document.getElementById('birthInput');
 
     birth.onblur = function () {
-        if (!validates.birth) {
+        if (birth.value == '') {
             birth.classList.add('invalid');
             birthError.innerHTML = birthErrorMessage;
             validates.birth = false;
@@ -462,3 +462,201 @@ function repeatPasswordValidate(){
         };
     };
 }
+
+//Validate on Submit --------------------------------------------------------------------
+document.form.onsubmit = function (event) {
+
+    var name = document.getElementById('nameInput');
+    var surname = document.getElementById('surnameInput');
+    var dni = document.getElementById('dniInput');
+    var birth = document.getElementById('birthInput');
+    var phone = document.getElementById('phoneInput');
+    var address = document.getElementById('addressInput');
+    var location = document.getElementById('locationInput');
+    var postalCode = document.getElementById('postalCodeInput');
+    var mail = document.getElementById('emailInput');
+    var password = document.getElementById('passwordInput');
+    var repeatPassword = document.getElementById('repeatPasswordInput');
+
+    if(validates.name === false){
+        name.classList.add('invalid');
+        nameError.innerHTML = nameErrorMessage;
+    };
+    if(validates.surname === false){
+        surname.classList.add('invalid');
+        surnameError.innerHTML = surnameErrorMessage;
+    };
+    if(validates.dni === false){
+        dni.classList.add('invalid');
+        dniError.innerHTML = dniErrorMessage;
+    };
+    if(validates.birth === false){
+        birth.classList.add('invalid');
+        birthError.innerHTML = birthErrorMessage;
+    };
+    if(validates.phone === false){
+        phone.classList.add('invalid');
+        phoneError.innerHTML = phoneErrorMessage;
+    };
+    if(validates.address === false){
+        address.classList.add('invalid');
+        addressError.innerHTML = addressErrorMessage;
+    };
+    if(validates.location === false){
+        location.classList.add('invalid');
+        locationError.innerHTML = locationErrorMessage;
+    };
+    if(validates.postalCode === false){
+        postalCode.classList.add('invalid');
+        postalCodeError.innerHTML = postalCodeErrorMessage;
+    };
+    if(validates.mail === false){
+        mail.classList.add('invalid');
+        mailError.innerHTML = mailErrorMessage;
+    };
+    if(validates.password === false){
+        password.classList.add('invalid');
+        passwordError.innerHTML = passwordErrorMessage;
+    };
+    if(validates.repeatPassword === false){
+        repeatPassword.classList.add('invalid');
+        repeatPasswordError.innerHTML = repeatPasswordErrorMessage;
+    };
+
+
+    showModal(name.value
+        , surname.value
+        , dni.value
+        , birth.value
+        , phone.value
+        , address.value
+        , location.value
+        , postalCode.value
+        , mail.value
+        , password.value
+        );
+
+    event.preventDefault();
+};
+
+function showModal(name
+    , surname
+    , dni
+    , birth
+    , phone
+    , address
+    , location
+    , postalCode
+    , mail
+    , password
+    ) {
+
+    var modal = document.getElementById("modalRegistro");
+    var span = document.getElementById("close");
+    var modalMessage = document.getElementById("modal-message");
+    var modalBody = document.getElementById("modal-body");
+
+    modal.style.display = "block";
+
+    if (validates.name
+        && validates.surname
+        && validates.dni
+        && validates.birth
+        && validates.phone
+        && validates.address
+        && validates.location
+        && validates.postalCode
+        && validates.mail
+        && validates.password
+        && validates.repeatPassword
+    ) {
+        var [year, month, day] = birth.split('-');
+        var birthFormated = [day, month, year].join('/');
+
+        modalBody.innerHTML = `Name: ${name}<br>`;
+        modalBody.innerHTML += `Surname: ${surname}<br>`;
+        modalBody.innerHTML += `DNI: ${dni}<br>`;
+        modalBody.innerHTML += `Birth: ${birthFormated}<br>`;
+        modalBody.innerHTML += `Phone: ${phone}<br>`;
+        modalBody.innerHTML += `Address: ${address}<br>`;
+        modalBody.innerHTML += `Location: ${location}<br>`;
+        modalBody.innerHTML += `Postal Code: ${postalCode}<br>`;
+        modalBody.innerHTML += `Mail: ${mail}<br>`;
+        modalBody.innerHTML += `Password: ${password}`;
+
+        modalBody.style.color = '#000';
+        modalMessage.style.backgroundColor = "#007282";
+        modalMessage.innerHTML = 'SUCCESS'
+        var success = true;
+
+    } else {
+        if (validates.name === false) {
+            modalMessage.innerHTML = 'ERROR';
+            modalBody.innerHTML = `NAME: ${nameErrorMessage}<br>`;
+        };
+        if (validates.surname === false) {
+            modalMessage.innerHTML = 'ERROR';
+            modalBody.innerHTML += `SURNAME: ${surnameErrorMessage}<br>`;
+        };
+        if (validates.dni === false) {
+            modalMessage.innerHTML = 'ERROR';
+            modalBody.innerHTML += `DNI: ${dniErrorMessage}<br>`;
+        };
+        if (validates.birth === false) {
+            modalMessage.innerHTML = 'ERROR';
+            modalBody.innerHTML += `BIRTH: ${birthErrorMessage}<br>`;
+        };
+        if (validates.phone === false) {
+            modalMessage.innerHTML = 'ERROR';
+            modalBody.innerHTML += `PHONE: ${phoneErrorMessage}<br>`;
+        };
+        if (validates.address === false) {
+            modalMessage.innerHTML = 'ERROR';
+            modalBody.innerHTML += `ADDRESS: ${addressErrorMessage}<br>`;
+        };
+        if (validates.location === false) {
+            modalMessage.innerHTML = 'ERROR';
+            modalBody.innerHTML += `LOCATION: ${locationErrorMessage}<br>`;
+        };
+        if (validates.postalCode === false) {
+            modalMessage.innerHTML = 'ERROR';
+            modalBody.innerHTML += `POSTAL CODE: ${postalCodeErrorMessage}<br>`;
+        };
+        if (validates.mail === false) {
+            modalMessage.innerHTML = 'ERROR';
+            modalBody.innerHTML += `MAIL: ${mailErrorMessage}<br>`;
+        };
+        if (validates.password === false) {
+            modalMessage.innerHTML = 'ERROR';
+            modalBody.innerHTML += `PASSWORD: ${passwordErrorMessage}<br>`;;
+        };
+        if (validates.repeatPassword === false) {
+            modalMessage.innerHTML = 'ERROR';
+            modalBody.innerHTML += `REPEAT PASSWORD: ${repeatPasswordErrorMessage}<br>`;;
+        };
+    }
+
+    span.onclick = function () {
+        modal.style.display = "none";
+        modalBody.innerHTML = "&nbsp;";
+        if(success){
+            document.getElementById("form").submit();
+            redirectHome();
+        };
+    };
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            modalBody.innerHTML = "&nbsp;";
+            if(success){
+                document.getElementById("form").submit();
+                redirectHome();
+            };
+        };
+    };
+};
+
+function redirectHome(){
+    window.location.href = "./index.html";
+};

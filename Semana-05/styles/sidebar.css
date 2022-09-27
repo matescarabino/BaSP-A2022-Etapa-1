@@ -1,5 +1,6 @@
 aside{
     display: none;
+    border-right: 1px solid black;
 }
 
 .nav-mobile{
