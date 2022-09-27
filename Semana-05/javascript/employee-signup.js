@@ -15,7 +15,7 @@ var validates = {
 var nameErrorMessage = 'Must have more than 3 letters.'
 var surnameErrorMessage = 'Must have more than 3 letters.'
 var dniErrorMessage = 'Must have more than 7 numbers.'
-var birthErrorMessage = 'In mm/dd/yyyy format.'
+var birthErrorMessage = 'Select a date.'
 var phoneErrorMessage = 'Must have more than 10 numbers.'
 var addressErrorMessage = 'At least 5 characters with letters, numbers and a space in between.'
 var locationErrorMessage = 'Alphanumeric text and must have more than 3 letters.'
@@ -29,7 +29,7 @@ surnameValidate();
 dniValidate();
 birthValidate();
 phoneValidate();
-// addressValidate();
+addressValidate();
 locationValidate();
 postalCodeValidate();
 mailValidate();
@@ -175,13 +175,19 @@ function birthValidate() {
     var birth = document.getElementById('birthInput');
 
     birth.onblur = function () {
-        console.log(birth.value)
-
+        if (!validates.birth) {
+            birth.classList.add('invalid');
+            birthError.innerHTML = birthErrorMessage;
+            validates.birth = false;
+        };
     };
 
     birth.onfocus = function () {
-        console.log(birth.value)
-
+        if (birth.classList.contains('invalid')) {
+            birth.classList.remove('invalid');
+            birthError.innerHTML = "&nbsp;";
+            validates.birth = true;
+        };
     };
 };
 
@@ -226,6 +232,53 @@ function phoneValidate() {
             phone.classList.remove('invalid');
             phoneError.innerHTML = "&nbsp;";
             validates.phone = true;
+        };
+    };
+};
+
+function addressValidate() {
+    var address = document.getElementById('addressInput');
+
+    address.onblur = function () {
+        var hasLetter = false;
+        var hasNumber = false;
+        var hasSpace = 0;
+        var hasLenght = false;
+
+        for (var i = 0; i < address.value.length; i++) {
+            var charCode = address.value.charCodeAt(i);
+            if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) {
+                hasLetter = true;
+            };
+            if (charCode > 47 && charCode < 58) {
+                hasNumber = true;
+            };
+            if (charCode == 32 && (i != 0 && i != address.value.length)) {
+                hasSpace ++;
+            };
+            if (address.value.length > 5) {
+                hasLenght = true;
+            };
+
+            if (hasLetter && hasNumber && (hasSpace == 1) && hasLenght) {
+                var addressExpression = true;
+            } else{
+                var addressExpression = false;
+            };
+        };
+
+        if (!addressExpression) {
+            address.classList.add('invalid');
+            addressError.innerHTML = addressErrorMessage;
+            validates.address = false;
+        };
+    };
+
+    address.onfocus = function () {
+        if (address.classList.contains('invalid')) {
+            address.classList.remove('invalid');
+            addressError.innerHTML = "&nbsp;";
+            validates.address = true;
         };
     };
 };
@@ -408,4 +461,4 @@ function repeatPasswordValidate(){
             validates.repeatPassword = true;
         };
     };
-};
+}
