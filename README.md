@@ -42,6 +42,14 @@ To see working site [click here](https://matescarabino.github.io/BaSP-A2022-Etap
 - We created an login and a employee signup form, using as base the landing page already developed.
 - We validated the user's data entries through javascript without the use of html.
 
+### Week 06 **JavaScript Async and Storage**
+To see working site [click here](https://matescarabino.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html)
+
+- In each form we made an HTTP request using the Javascript Fetch method, sending all the data loaded in the form.
+- The request should only be executed if all form validations pass; if any field does not meet the validations, the request should not be made.
+- We send the form request as “query-params”.
+- We save the data in "local storage".
+- We display both error and confirmation messages with "modals".
 
 ## Author ✒️
 - **Mateo Scarabino** - [matescarabino](https://github.com/matescarabino)

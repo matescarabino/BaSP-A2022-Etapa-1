@@ -1,0 +1,76 @@
+header{
+    display: flex;
+    height: 100vh;
+    background-image:url(../assets/background-header.png);
+    background-size: cover;
+}
+
+.card-info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+}
+
+h1{
+    margin-left: 22px;
+}
+
+.card-info-bar{
+    border-top:2px solid #AACE9B;
+    margin: 0px 22px 0px 22px;
+}
+
+h2{
+    margin: 17px 0px 50px 22px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+
+.card-info-text{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 22px;
+    margin-right: 22px;
+}
+
+p{
+    display: flex;
+    text-align: start;
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/*------------- Larger phones and tablets ----------------*/
+@media (min-width: 480px) {
+
+    .card-info{
+        width: 480px;
+    }
+}
+
+/*Larger tablets in landscape, laptops and small desktops*/
+@media (min-width: 768px) {
+
+    .card-info{
+        margin-left: 30px;
+    }
+}
+
+/*Larger desktops and monitors*/
+@media (min-width: 1024px) {
+
+    .card-info{
+        justify-content: start;
+    }
+
+    h1{
+        margin-top: 170px;
+    }
+}

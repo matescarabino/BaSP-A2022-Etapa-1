@@ -1,0 +1,53 @@
+
+#nameError,
+#surnameError,
+#dniError,
+#birthError,
+#phoneError,
+#addressError,
+#locationError,
+#postalCodeError,
+#mailError,
+#passwordError,
+#repeatPasswordError {
+    text-align: left;
+    color: #F13312
+}
+
+
+/*Larger tablets in landscape, laptops and small desktops*/
+@media (min-width: 480px) {
+
+    .card-field{
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    .modal-content {
+        width: 450px;
+    }
+}
+
+/*Larger desktops and monitors*/
+@media (min-width: 1024px) {
+
+    main {
+        margin-left: 152px;
+    }
+
+    .card{
+        border: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card-field{
+        width: 35%;
+        margin-left: 10%;
+    }
+
+    .card-field-error{
+        height: 40px;
+    }
+}
