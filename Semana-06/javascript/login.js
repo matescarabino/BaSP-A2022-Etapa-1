@@ -93,12 +93,12 @@ document.form.onsubmit = function (event) {
         passwordError.innerHTML = passwordErrorMessage;
     };
 
-    showModal(mail.value,password.value);
+    validateRequest((mail.value).toLowerCase(),password.value);
 
     event.preventDefault();
 };
 
-function showModal(mail,password) {
+function showModal(mail,password,success) {
     var modal = document.getElementById("modalRegistro");
     var span = document.getElementById("close");
     var modalMessage = document.getElementById("modal-message");
@@ -106,14 +106,15 @@ function showModal(mail,password) {
 
     modal.style.display = "block";
 
-    if (validates.mail === true && validates.password === true) {
+    if (validates.mail === true && validates.password === true && success === true) {
         modalBody.innerHTML = `Mail: ${mail}<br>`;
         modalBody.innerHTML += `Password: ${password}`;
 
         modalBody.style.color = '#000';
         modalMessage.style.backgroundColor = "#373867";
-        modalMessage.innerHTML = 'SUCCESS'
-        var success = true;
+        modalBody.style.textAlign = 'center';
+        modalMessage.innerHTML = 'SUCCESS';
+        var success2 = true;
     } else {
 
         if (validates.mail === false) {
@@ -121,18 +122,23 @@ function showModal(mail,password) {
             modalBody.innerHTML = `Mail: ${mailErrorMessage}<br>`;
         };
 
-        if (validates.password === false) {
+        if (validates.mail === false) {
             modalMessage.innerHTML = 'ERROR';
-            modalBody.innerHTML += `Password: ${passwordErrorMessage}<br>`;;
+            modalBody.innerHTML += `Password: ${passwordErrorMessage}<br>`;
         };
-    }
+
+        if (validates.mail === true && validates.mail === true && success === false){
+            modalMessage.innerHTML = 'ERROR';
+            modalBody.innerHTML += `Invalid user or password`;
+            modalBody.style.textAlign = 'center';
+        };
+    };
 
     span.onclick = function () {
         modal.style.display = "none";
         modalBody.innerHTML = "&nbsp;";
-        if(success){
+        if(success2){
             document.getElementById("form").submit();
-            redirectHome();
         };
     };
 
@@ -140,14 +146,24 @@ function showModal(mail,password) {
         if (event.target == modal) {
             modal.style.display = "none";
             modalBody.innerHTML = "&nbsp;";
-            if(success){
+            if(success2){
                 document.getElementById("form").submit();
-                redirectHome();
             };
         };
     };
 };
 
-function redirectHome(){
-    window.location.href = "./index.html";
+ //Request
+ function validateRequest(mail, password) {
+    // Usuario: rose@radiumrocket.com
+    // Password: BaSP2022
+
+    fetch("https://basp-m2022-api-rest-server.herokuapp.com/login?email="+mail+"&password="+password)
+        .then(res => res.json())
+        .then(data => mostrarData(data))
+        .catch(error => console.error(error))
+
+    const mostrarData = (data) => {
+        showModal(mail,password,data.success);
+    };
 };
