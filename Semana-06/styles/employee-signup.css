@@ -1,13 +1,13 @@
 
 #nameError,
-#surnameError,
+#lastNameError,
 #dniError,
 #birthError,
 #phoneError,
 #addressError,
-#locationError,
-#postalCodeError,
-#mailError,
+#cityError,
+#zipError,
+#emailError,
 #passwordError,
 #repeatPasswordError {
     text-align: left;

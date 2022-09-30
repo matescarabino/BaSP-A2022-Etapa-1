@@ -1,38 +1,38 @@
 var validates = {
     name: false,
-    surname: false,
+    lastName: false,
     dni: false,
     birth: false,
     phone: false,
     address: false,
-    location: false,
-    postalCode: false,
-    mail: false,
+    city: false,
+    zip: false,
+    email: false,
     password: false,
     repeatPassword: false
 };
 
 var nameErrorMessage = 'Must have more than 3 letters.'
-var surnameErrorMessage = 'Must have more than 3 letters.'
-var dniErrorMessage = 'Must have more than 7 numbers.'
+var lastNameErrorMessage = 'Must have more than 3 letters.'
+var dniErrorMessage = 'Must have between 7 and 8 numbers.'
 var birthErrorMessage = 'Select a valid date.'
-var phoneErrorMessage = 'Must have more than 10 numbers.'
+var phoneErrorMessage = 'Must have 10 numbers.'
 var addressErrorMessage = 'Must have at least 5 characters with letters, numbers and a space in between.'
-var locationErrorMessage = 'Must have at least 3 characters with alphanumeric text.'
-var postalCodeErrorMessage = 'Must have between 4 and 5 numbers.'
-var mailErrorMessage = 'Enter a valid email.';
+var cityErrorMessage = 'Must have at least 3 characters with alphanumeric text.'
+var zipErrorMessage = 'Must have between 4 and 5 numbers.'
+var emailErrorMessage = 'Enter a valid email.';
 var passwordErrorMessage = 'Must contain at least one lowercase, a number and at least 8 characters.';
 var repeatPasswordErrorMessage = 'Passwords must match.'
 
 nameValidate();
-surnameValidate();
+lastNameValidate();
 dniValidate();
 birthValidate();
 phoneValidate();
 addressValidate();
-locationValidate();
-postalCodeValidate();
-mailValidate();
+cityValidate();
+zipValidate();
+emailValidate();
 passwordValidate();
 repeatPasswordValidate();
 
@@ -81,16 +81,16 @@ function nameValidate() {
     };
 };
 
-function surnameValidate() {
-    var surname = document.getElementById('surnameInput');
+function lastNameValidate() {
+    var lastName = document.getElementById('lastNameInput');
 
-    surname.onblur = function () {
+    lastName.onblur = function () {
         var hasLetter = false;
         var hasOther = false;
         var hasLenght = false;
 
-        for (var i = 0; i < surname.value.length; i++) {
-            var charCode = surname.value.charCodeAt(i);
+        for (var i = 0; i < lastName.value.length; i++) {
+            var charCode = lastName.value.charCodeAt(i);
             if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) {
                 hasLetter = true;
             }else{
@@ -98,30 +98,30 @@ function surnameValidate() {
             };
         };
 
-        if (surname.value.length > 3) {
+        if (lastName.value.length > 3) {
             hasLenght = true;
         };
 
         if (hasLetter && hasLenght) {
-            var surnameExpression = true;
+            var lastNameExpression = true;
         };
 
         if(hasOther == true){
-            var surnameExpression = false;
+            var lastNameExpression = false;
         };
 
-        if (!surnameExpression) {
-            surname.classList.add('invalid');
-            surnameError.innerHTML = surnameErrorMessage;
-            validates.surname = false;
+        if (!lastNameExpression) {
+            lastName.classList.add('invalid');
+            lastNameError.innerHTML = lastNameErrorMessage;
+            validates.lastName = false;
         };
     };
 
-    surname.onfocus = function () {
-        if (surname.classList.contains('invalid')) {
-            surname.classList.remove('invalid');
-            surnameError.innerHTML = "&nbsp;";
-            validates.surname = true;
+    lastName.onfocus = function () {
+        if (lastName.classList.contains('invalid')) {
+            lastName.classList.remove('invalid');
+            lastNameError.innerHTML = "&nbsp;";
+            validates.lastName = true;
         };
     };
 };
@@ -143,7 +143,7 @@ function dniValidate() {
             };
         };
 
-        if (dni.value.length > 7) {
+        if (dni.value.length > 6 && dni.value.length < 9) {
             hasLenght = true;
         };
 
@@ -216,7 +216,7 @@ function phoneValidate() {
             };
         };
 
-        if (phone.value.length > 10) {
+        if (phone.value.length == 10) {
             hasLenght = true;
         };
 
@@ -291,16 +291,16 @@ function addressValidate() {
     };
 };
 
-function locationValidate() {
-    var location = document.getElementById('locationInput');
+function cityValidate() {
+    var city = document.getElementById('cityInput');
 
-    location.onblur = function () {
+    city.onblur = function () {
         var hasAlphanumeric = false;
         var hasOther = false;
         var hasLenght = false;
 
-        for (var i = 0; i < location.value.length; i++) {
-            var charCode = location.value.charCodeAt(i);
+        for (var i = 0; i < city.value.length; i++) {
+            var charCode = city.value.charCodeAt(i);
             if ((charCode > 64 && charCode < 91)||(charCode > 96 && charCode < 123)||(charCode > 47 && charCode < 58)){
                 hasAlphanumeric = true;
             }else{
@@ -308,44 +308,44 @@ function locationValidate() {
             };
         };
 
-        if (location.value.length > 3) {
+        if (city.value.length > 3) {
             hasLenght = true;
         };
 
         if (hasAlphanumeric && hasLenght) {
-            var locationExpression = true;
+            var cityExpression = true;
         };
 
         if(hasOther == true){
-            var locationExpression = false;
+            var cityExpression = false;
         };
 
-        if (!locationExpression) {
-            location.classList.add('invalid');
-            locationError.innerHTML = locationErrorMessage;
-            validates.location = false;
+        if (!cityExpression) {
+            city.classList.add('invalid');
+            cityError.innerHTML = cityErrorMessage;
+            validates.city = false;
         };
     };
 
-    location.onfocus = function () {
-        if (location.classList.contains('invalid')) {
-            location.classList.remove('invalid');
-            locationError.innerHTML = "&nbsp;";
-            validates.location = true;
+    city.onfocus = function () {
+        if (city.classList.contains('invalid')) {
+            city.classList.remove('invalid');
+            cityError.innerHTML = "&nbsp;";
+            validates.city = true;
         };
     };
 };
 
-function postalCodeValidate() {
-    var postalCode = document.getElementById('postalCodeInput');
+function zipValidate() {
+    var zip = document.getElementById('zipInput');
 
-    postalCode.onblur = function () {
+    zip.onblur = function () {
         var hasNumber = false;
         var hasOther = false;
         var hasLenght = false;
 
-        for (var i = 0; i < postalCode.value.length; i++) {
-            var charCode = postalCode.value.charCodeAt(i);
+        for (var i = 0; i < zip.value.length; i++) {
+            var charCode = zip.value.charCodeAt(i);
             if ((charCode > 47 && charCode < 58)){
                 hasNumber = true;
             }else{
@@ -353,51 +353,51 @@ function postalCodeValidate() {
             };
         };
 
-        if (postalCode.value.length > 3) {
+        if (zip.value.length > 3) {
             hasLenght = true;
         };
 
         if (hasNumber && hasLenght) {
-            var postalCodeExpression = true;
+            var zipExpression = true;
         };
 
         if(hasOther == true){
-            var postalCodeExpression = false;
+            var zipExpression = false;
         };
 
-        if (!postalCodeExpression) {
-            postalCode.classList.add('invalid');
-            postalCodeError.innerHTML = postalCodeErrorMessage;
-            validates.postalCode = false;
+        if (!zipExpression) {
+            zip.classList.add('invalid');
+            zipError.innerHTML = zipErrorMessage;
+            validates.zip = false;
         };
     };
 
-    postalCode.onfocus = function () {
-        if (postalCode.classList.contains('invalid')) {
-            postalCode.classList.remove('invalid');
-            postalCodeError.innerHTML = "&nbsp;";
-            validates.postalCode = true;
+    zip.onfocus = function () {
+        if (zip.classList.contains('invalid')) {
+            zip.classList.remove('invalid');
+            zipError.innerHTML = "&nbsp;";
+            validates.zip = true;
         };
     };
 };
 
-function mailValidate() {
-    var mail = document.getElementById('emailInput');
-    var mailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+function emailValidate() {
+    var email = document.getElementById('emailInput');
+    var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 
-    mail.onblur = function () {
-        if (!((mail.value).toLowerCase()).match(mailExpression)) {
-            mail.classList.add('invalid');
-            mailError.innerHTML = mailErrorMessage;
-            validates.mail = false;
+    email.onblur = function () {
+        if (!((email.value).toLowerCase()).match(emailExpression)) {
+            email.classList.add('invalid');
+            emailError.innerHTML = emailErrorMessage;
+            validates.email = false;
         }else{
-            validates.mail = true;
+            validates.email = true;
         };
     };
-    mail.onfocus = function () {
-        if (mail.classList.contains('invalid')) {
-            mail.classList.remove('invalid');
-            mailError.innerHTML = "&nbsp;";
+    email.onfocus = function () {
+        if (email.classList.contains('invalid')) {
+            email.classList.remove('invalid');
+            emailError.innerHTML = "&nbsp;";
         };
     };
 }
@@ -475,88 +475,159 @@ function repeatPasswordValidate(){
 document.form.onsubmit = function (event) {
 
     var name = document.getElementById('nameInput');
-    var surname = document.getElementById('surnameInput');
+    var lastName = document.getElementById('lastNameInput');
     var dni = document.getElementById('dniInput');
     var birth = document.getElementById('birthInput');
     var phone = document.getElementById('phoneInput');
     var address = document.getElementById('addressInput');
-    var location = document.getElementById('locationInput');
-    var postalCode = document.getElementById('postalCodeInput');
-    var mail = document.getElementById('emailInput');
+    var city = document.getElementById('cityInput');
+    var zip = document.getElementById('zipInput');
+    var email = document.getElementById('emailInput');
     var password = document.getElementById('passwordInput');
     var repeatPassword = document.getElementById('repeatPasswordInput');
 
-    if(validates.name === false){
+    var success = true;
+
+    if (validates.name === false) {
         name.classList.add('invalid');
         nameError.innerHTML = nameErrorMessage;
+        success = false;
     };
-    if(validates.surname === false){
-        surname.classList.add('invalid');
-        surnameError.innerHTML = surnameErrorMessage;
+    if (validates.lastName === false) {
+        lastName.classList.add('invalid');
+        lastNameError.innerHTML = lastNameErrorMessage;
+        success = false;
     };
-    if(validates.dni === false){
+    if (validates.dni === false) {
         dni.classList.add('invalid');
         dniError.innerHTML = dniErrorMessage;
+        success = false;
     };
-    if(validates.birth === false){
+    if (validates.birth === false) {
         birth.classList.add('invalid');
         birthError.innerHTML = birthErrorMessage;
+        success = false;
     };
-    if(validates.phone === false){
+    if (validates.phone === false) {
         phone.classList.add('invalid');
         phoneError.innerHTML = phoneErrorMessage;
+        success = false;
     };
-    if(validates.address === false){
+    if (validates.address === false) {
         address.classList.add('invalid');
         addressError.innerHTML = addressErrorMessage;
+        success = false;
     };
-    if(validates.location === false){
-        location.classList.add('invalid');
-        locationError.innerHTML = locationErrorMessage;
+    if (validates.city === false) {
+        city.classList.add('invalid');
+        cityError.innerHTML = cityErrorMessage;
+        success = false;
     };
-    if(validates.postalCode === false){
-        postalCode.classList.add('invalid');
-        postalCodeError.innerHTML = postalCodeErrorMessage;
+    if (validates.zip === false) {
+        zip.classList.add('invalid');
+        zipError.innerHTML = zipErrorMessage;
+        success = false;
     };
-    if(validates.mail === false){
-        mail.classList.add('invalid');
-        mailError.innerHTML = mailErrorMessage;
+    if (validates.email === false) {
+        email.classList.add('invalid');
+        emailError.innerHTML = emailErrorMessage;
+        success = false;
     };
-    if(validates.password === false){
+    if (validates.password === false) {
         password.classList.add('invalid');
         passwordError.innerHTML = passwordErrorMessage;
+        success = false;
     };
-    if(validates.repeatPassword === false){
+    if (validates.repeatPassword === false) {
         repeatPassword.classList.add('invalid');
         repeatPasswordError.innerHTML = repeatPasswordErrorMessage;
+        success = false;
     };
 
-
-    showModal(name.value
-        , surname.value
-        , dni.value
-        , birth.value
-        , phone.value
-        , address.value
-        , location.value
-        , postalCode.value
-        , mail.value
-        , password.value
+    if (success == true) {
+        validateRequest(name.value
+            , lastName.value
+            , dni.value
+            , birth.value
+            , phone.value
+            , address.value
+            , city.value
+            , zip.value
+            , email.value
+            , password.value
         );
+    } else {
+        showModal(name.value
+            , lastName.value
+            , dni.value
+            , birth.value
+            , phone.value
+            , address.value
+            , city.value
+            , zip.value
+            , email.value
+            , password.value
+            , success);
+    };
 
     event.preventDefault();
 };
 
-function showModal(name
-    , surname
+ function validateRequest(name
+    , lastName
     , dni
     , birth
     , phone
     , address
-    , location
-    , postalCode
-    , mail
+    , city
+    , zip
+    , email
     , password
+    ) {
+
+    var [year, month, day] = birth.split('-');
+    var birthFormated = [month, day , year].join('/');
+
+    fetch("https://basp-m2022-api-rest-server.herokuapp.com/signup?name="+name
+        + "&lastName=" + lastName
+        + "&dni=" + dni
+        + "&dob=" + birthFormated
+        + "&phone=" + phone
+        + "&phone=" + phone
+        + "&address=" + address
+        + "&city=" + city
+        + "&zip="+ zip
+        + "&email=" + email
+        + "&password=" + password)
+        .then(res => res.json())
+        .then(data => mostrarData(data))
+        .catch(error => console.error(error))
+    const mostrarData = (data) => {
+        showModal(name
+            , lastName
+            , dni
+            , birthFormated
+            , phone
+            , address
+            , city
+            , zip
+            , email
+            , password
+            ,data.success);
+    };
+};
+
+function showModal(name
+    , lastName
+    , dni
+    , birthFormated
+    , phone
+    , address
+    , city
+    , zip
+    , email
+    , password
+    , success
     ) {
 
     var modal = document.getElementById("modalRegistro");
@@ -567,44 +638,42 @@ function showModal(name
     modal.style.display = "block";
 
     if (validates.name
-        && validates.surname
+        && validates.lastName
         && validates.dni
         && validates.birth
         && validates.phone
         && validates.address
-        && validates.location
-        && validates.postalCode
-        && validates.mail
+        && validates.city
+        && validates.zip
+        && validates.email
         && validates.password
         && validates.repeatPassword
-    ) {
-        var [year, month, day] = birth.split('-');
-        var birthFormated = [day, month, year].join('/');
+        && success
+        ) {
 
         modalBody.innerHTML = `Name: ${name}<br>`;
-        modalBody.innerHTML += `Surname: ${surname}<br>`;
+        modalBody.innerHTML += `lastName: ${lastName}<br>`;
         modalBody.innerHTML += `DNI: ${dni}<br>`;
         modalBody.innerHTML += `Birth: ${birthFormated}<br>`;
         modalBody.innerHTML += `Phone: ${phone}<br>`;
         modalBody.innerHTML += `Address: ${address}<br>`;
-        modalBody.innerHTML += `Location: ${location}<br>`;
-        modalBody.innerHTML += `Postal Code: ${postalCode}<br>`;
-        modalBody.innerHTML += `Mail: ${mail}<br>`;
+        modalBody.innerHTML += `city: ${city}<br>`;
+        modalBody.innerHTML += `Postal Code: ${zip}<br>`;
+        modalBody.innerHTML += `email: ${email}<br>`;
         modalBody.innerHTML += `Password: ${password}`;
 
         modalBody.style.color = '#000';
         modalMessage.style.backgroundColor = "#373867";
         modalMessage.innerHTML = 'SUCCESS';
-        var success = true;
 
     } else {
         if (validates.name === false) {
             modalMessage.innerHTML = 'ERROR';
             modalBody.innerHTML = `NAME: ${nameErrorMessage}<br>`;
         };
-        if (validates.surname === false) {
+        if (validates.lastName === false) {
             modalMessage.innerHTML = 'ERROR';
-            modalBody.innerHTML += `SURNAME: ${surnameErrorMessage}<br>`;
+            modalBody.innerHTML += `LAST NAME: ${lastNameErrorMessage}<br>`;
         };
         if (validates.dni === false) {
             modalMessage.innerHTML = 'ERROR';
@@ -622,17 +691,17 @@ function showModal(name
             modalMessage.innerHTML = 'ERROR';
             modalBody.innerHTML += `ADDRESS: ${addressErrorMessage}<br>`;
         };
-        if (validates.location === false) {
+        if (validates.city === false) {
             modalMessage.innerHTML = 'ERROR';
-            modalBody.innerHTML += `LOCATION: ${locationErrorMessage}<br>`;
+            modalBody.innerHTML += `CITY: ${cityErrorMessage}<br>`;
         };
-        if (validates.postalCode === false) {
+        if (validates.zip === false) {
             modalMessage.innerHTML = 'ERROR';
-            modalBody.innerHTML += `POSTAL CODE: ${postalCodeErrorMessage}<br>`;
+            modalBody.innerHTML += `POSTAL CODE: ${zipErrorMessage}<br>`;
         };
-        if (validates.mail === false) {
+        if (validates.email === false) {
             modalMessage.innerHTML = 'ERROR';
-            modalBody.innerHTML += `MAIL: ${mailErrorMessage}<br>`;
+            modalBody.innerHTML += `EMAIL: ${emailErrorMessage}<br>`;
         };
         if (validates.password === false) {
             modalMessage.innerHTML = 'ERROR';
@@ -649,7 +718,6 @@ function showModal(name
         modalBody.innerHTML = "&nbsp;";
         if(success){
             document.getElementById("form").submit();
-            redirectHome();
         };
     };
 
@@ -659,12 +727,8 @@ function showModal(name
             modalBody.innerHTML = "&nbsp;";
             if(success){
                 document.getElementById("form").submit();
-                redirectHome();
             };
         };
     };
 };
 
-function redirectHome(){
-    window.location.href = "./index.html";
-};

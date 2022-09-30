@@ -83,19 +83,39 @@ document.form.onsubmit = function (event) {
     var mail = document.getElementById('emailInput');
     var password = document.getElementById('passwordInput');
 
+    var success = true;
+
     if(validates.mail === false){
         mail.classList.add('invalid');
         mailError.innerHTML = mailErrorMessage;
+        success = false;
     };
 
     if(validates.password === false){
         password.classList.add('invalid');
         passwordError.innerHTML = passwordErrorMessage;
+        success = false;
     };
 
-    validateRequest((mail.value).toLowerCase(),password.value);
+    if (success == true) {
+        validateRequest((mail.value).toLowerCase(), password.value);
+    }else{
+        showModal((mail.value).toLowerCase(), password.value,success);
+    };
 
     event.preventDefault();
+};
+
+ function validateRequest(mail, password) {
+
+    fetch("https://basp-m2022-api-rest-server.herokuapp.com/login?email="+mail+"&password="+password)
+        .then(res => res.json())
+        .then(data => showData(data))
+        .catch(error => console.error(error))
+
+    const showData = (data) => {
+        showModal(mail,password,data.success);
+    };
 };
 
 function showModal(mail,password,success) {
@@ -114,7 +134,6 @@ function showModal(mail,password,success) {
         modalMessage.style.backgroundColor = "#373867";
         modalBody.style.textAlign = 'center';
         modalMessage.innerHTML = 'SUCCESS';
-        var success2 = true;
     } else {
 
         if (validates.mail === false) {
@@ -122,12 +141,12 @@ function showModal(mail,password,success) {
             modalBody.innerHTML = `Mail: ${mailErrorMessage}<br>`;
         };
 
-        if (validates.mail === false) {
+        if (validates.password === false) {
             modalMessage.innerHTML = 'ERROR';
             modalBody.innerHTML += `Password: ${passwordErrorMessage}<br>`;
         };
 
-        if (validates.mail === true && validates.mail === true && success === false){
+        if (validates.mail === true && validates.password === true && (success === false)){
             modalMessage.innerHTML = 'ERROR';
             modalBody.innerHTML += `Invalid user or password`;
             modalBody.style.textAlign = 'center';
@@ -137,7 +156,7 @@ function showModal(mail,password,success) {
     span.onclick = function () {
         modal.style.display = "none";
         modalBody.innerHTML = "&nbsp;";
-        if(success2){
+        if(success){
             document.getElementById("form").submit();
         };
     };
@@ -146,24 +165,10 @@ function showModal(mail,password,success) {
         if (event.target == modal) {
             modal.style.display = "none";
             modalBody.innerHTML = "&nbsp;";
-            if(success2){
+            if(success){
                 document.getElementById("form").submit();
             };
         };
     };
 };
 
- //Request
- function validateRequest(mail, password) {
-    // Usuario: rose@radiumrocket.com
-    // Password: BaSP2022
-
-    fetch("https://basp-m2022-api-rest-server.herokuapp.com/login?email="+mail+"&password="+password)
-        .then(res => res.json())
-        .then(data => mostrarData(data))
-        .catch(error => console.error(error))
-
-    const mostrarData = (data) => {
-        showModal(mail,password,data.success);
-    };
-};
