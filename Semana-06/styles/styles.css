@@ -115,7 +115,7 @@ main {
     border-color: #F13312 !important;
 }
 
-#mailError,
+#emailError,
 #passwordError{
     color: #F13312;
 }
