@@ -40,6 +40,9 @@ window.onload = function () {
     var passwordErrorMessage = 'Must contain at least one Lowercase, one Uppercase, a number and 8 characters.';
     var repeatPasswordErrorMessage = 'Passwords must match.'
 
+    loadForm();
+
+    //Form fields onBlur/onFocus validations function call-------------------------------------------------------------
     nameValidate();
     lastNameValidate();
     dniValidate();
@@ -52,6 +55,271 @@ window.onload = function () {
     passwordValidate();
     repeatPasswordValidate();
 
+    //Validate on Submit ----------------------------------------------------------------------------------------------
+    document.form.onsubmit = function (event) {
+
+        var name = document.getElementById('nameInput');
+        var lastName = document.getElementById('lastNameInput');
+        var dni = document.getElementById('dniInput');
+        var birth = document.getElementById('birthInput');
+        var phone = document.getElementById('phoneInput');
+        var address = document.getElementById('addressInput');
+        var city = document.getElementById('cityInput');
+        var zip = document.getElementById('zipInput');
+        var email = document.getElementById('emailInput');
+        var password = document.getElementById('passwordInput');
+        var repeatPassword = document.getElementById('repeatPasswordInput');
+
+        var success = true;
+
+        if (validates.name === false) {
+            name.classList.add('invalid');
+            nameError.innerHTML = nameErrorMessage;
+            success = false;
+        };
+        if (validates.lastName === false) {
+            lastName.classList.add('invalid');
+            lastNameError.innerHTML = lastNameErrorMessage;
+            success = false;
+        };
+        if (validates.dni === false) {
+            dni.classList.add('invalid');
+            dniError.innerHTML = dniErrorMessage;
+            success = false;
+        };
+        if (validates.birth === false) {
+            birth.classList.add('invalid');
+            birthError.innerHTML = birthErrorMessage;
+            success = false;
+        };
+        if (validates.phone === false) {
+            phone.classList.add('invalid');
+            phoneError.innerHTML = phoneErrorMessage;
+            success = false;
+        };
+        if (validates.address === false) {
+            address.classList.add('invalid');
+            addressError.innerHTML = addressErrorMessage;
+            success = false;
+        };
+        if (validates.city === false) {
+            city.classList.add('invalid');
+            cityError.innerHTML = cityErrorMessage;
+            success = false;
+        };
+        if (validates.zip === false) {
+            zip.classList.add('invalid');
+            zipError.innerHTML = zipErrorMessage;
+            success = false;
+        };
+        if (validates.email === false) {
+            email.classList.add('invalid');
+            emailError.innerHTML = emailErrorMessage;
+            success = false;
+        };
+        if (validates.password === false) {
+            password.classList.add('invalid');
+            passwordError.innerHTML = passwordErrorMessage;
+            success = false;
+        };
+        if (validates.repeatPassword === false) {
+            repeatPassword.classList.add('invalid');
+            repeatPasswordError.innerHTML = repeatPasswordErrorMessage;
+            success = false;
+        };
+
+        if (success == true) {
+            validateRequest();
+        } else {
+            showModal(success);
+        };
+
+        event.preventDefault();
+    };
+
+    function validateRequest() {
+
+        fetch("https://basp-m2022-api-rest-server.herokuapp.com/signup?name=" + formValues.name
+            + "&lastName=" + formValues.lastName
+            + "&dni=" + formValues.dni
+            + "&dob=" + formValues.birth
+            + "&phone=" + formValues.phone
+            + "&address=" + formValues.address
+            + "&city=" + formValues.city
+            + "&zip=" + formValues.zip
+            + "&email=" + formValues.email
+            + "&password=" + formValues.password)
+            .then(res => res.json())
+            .then(data => showData(data))
+            .catch(error => console.error(error))
+
+            const showData = (data) => {
+            showModal(data.success);
+        };
+    };
+
+    function showModal(success) {
+
+        var modal = document.getElementById("modalRegistro");
+        var span = document.getElementById("close");
+        var modalMessage = document.getElementById("modal-message");
+        var modalBody = document.getElementById("modal-body");
+
+        modal.style.display = "block";
+
+        if (success) {
+            modalBody.innerHTML = `Name: ${formValues.name}<br>`;
+            modalBody.innerHTML += `Last Name: ${formValues.lastName}<br>`;
+            modalBody.innerHTML += `DNI: ${formValues.dni}<br>`;
+            modalBody.innerHTML += `Birth: ${formValues.birth}<br>`;
+            modalBody.innerHTML += `Phone: ${formValues.phone}<br>`;
+            modalBody.innerHTML += `Address: ${formValues.address}<br>`;
+            modalBody.innerHTML += `City: ${formValues.city}<br>`;
+            modalBody.innerHTML += `Postal Code: ${formValues.zip}<br>`;
+            modalBody.innerHTML += `Email: ${formValues.email}<br>`;
+            modalBody.innerHTML += `Password: ${formValues.password}`;
+
+            modalBody.style.color = '#000';
+            modalMessage.style.backgroundColor = "#373867";
+            modalMessage.innerHTML = 'SUCCESS';
+
+            saveData();
+
+        } else {
+            if (validates.name === false) {
+                modalMessage.innerHTML = 'ERROR';
+                modalBody.innerHTML = `NAME: ${nameErrorMessage}<br>`;
+            };
+            if (validates.lastName === false) {
+                modalMessage.innerHTML = 'ERROR';
+                modalBody.innerHTML += `LAST NAME: ${lastNameErrorMessage}<br>`;
+            };
+            if (validates.dni === false) {
+                modalMessage.innerHTML = 'ERROR';
+                modalBody.innerHTML += `DNI: ${dniErrorMessage}<br>`;
+            };
+            if (validates.birth === false) {
+                modalMessage.innerHTML = 'ERROR';
+                modalBody.innerHTML += `BIRTH: ${birthErrorMessage}<br>`;
+            };
+            if (validates.phone === false) {
+                modalMessage.innerHTML = 'ERROR';
+                modalBody.innerHTML += `PHONE: ${phoneErrorMessage}<br>`;
+            };
+            if (validates.address === false) {
+                modalMessage.innerHTML = 'ERROR';
+                modalBody.innerHTML += `ADDRESS: ${addressErrorMessage}<br>`;
+            };
+            if (validates.city === false) {
+                modalMessage.innerHTML = 'ERROR';
+                modalBody.innerHTML += `CITY: ${cityErrorMessage}<br>`;
+            };
+            if (validates.zip === false) {
+                modalMessage.innerHTML = 'ERROR';
+                modalBody.innerHTML += `POSTAL CODE: ${zipErrorMessage}<br>`;
+            };
+            if (validates.email === false) {
+                modalMessage.innerHTML = 'ERROR';
+                modalBody.innerHTML += `EMAIL: ${emailErrorMessage}<br>`;
+            };
+            if (validates.password === false) {
+                modalMessage.innerHTML = 'ERROR';
+                modalBody.innerHTML += `PASSWORD: ${passwordErrorMessage}<br>`;
+            };
+            if (validates.repeatPassword === false) {
+                modalMessage.innerHTML = 'ERROR';
+                modalBody.innerHTML += `REPEAT PASSWORD: ${repeatPasswordErrorMessage}<br>`;
+            };
+
+        };
+
+        span.onclick = function () {
+            modal.style.display = "none";
+            modalBody.innerHTML = "&nbsp;";
+            if (success) {
+                document.getElementById("form").submit();
+            };
+        };
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                modalBody.innerHTML = "&nbsp;";
+                if (success) {
+                    document.getElementById("form").submit();
+                };
+            };
+        };
+    };
+
+    function loadForm() {
+        var savesArray = JSON.parse(localStorage.getItem('formValues'));
+
+        if (savesArray != null) {
+            var name = document.getElementById('nameInput');
+            var lastName = document.getElementById('lastNameInput');
+            var dni = document.getElementById('dniInput');
+            var birth = document.getElementById('birthInput');
+            var phone = document.getElementById('phoneInput');
+            var address = document.getElementById('addressInput');
+            var city = document.getElementById('cityInput');
+            var zip = document.getElementById('zipInput');
+            var email = document.getElementById('emailInput');
+            var password = document.getElementById('passwordInput');
+            var repeatPassword = document.getElementById('repeatPasswordInput');
+
+            var [month, day, year] = savesArray.birth.split('/');
+            var birthFormated = [year, month, day].join('-');
+
+            name.value = savesArray.name;
+            lastName.value = savesArray.lastName;
+            dni.value = savesArray.dni;
+            birth.value = birthFormated;
+            phone.value = savesArray.phone;
+            address.value = savesArray.address;
+            city.value = savesArray.city;
+            zip.value = savesArray.zip;
+            email.value = savesArray.email;
+            password.value = savesArray.password;
+            repeatPassword.value = savesArray.repeatPassword;
+
+            formValues.name = savesArray.name;
+            formValues.lastName = savesArray.lastName;
+            formValues.dni = savesArray.dni;
+            formValues.birth = savesArray.birth;
+            formValues.phone = savesArray.phone;
+            formValues.address = savesArray.address;
+            formValues.city = savesArray.city;
+            formValues.zip = savesArray.zip;
+            formValues.email = savesArray.email;
+            formValues.password = savesArray.password;
+            formValues.repeatPassword = savesArray.repeatPassword;
+
+            validates.name = true;
+            validates.lastName = true;
+            validates.dni = true;
+            validates.birth = true;
+            validates.phone = true;
+            validates.address = true;
+            validates.city = true;
+            validates.zip = true;
+            validates.email = true;
+            validates.password = true;
+            validates.repeatPassword = true;
+
+        };
+    };
+
+
+    function saveData(){
+        //Save data to localStorage in JSON format
+        var savesArray = JSON.parse(localStorage.getItem('formValues')) || [];
+        savesArray = formValues;
+        var savesArrayJSON = JSON.stringify(savesArray);
+        localStorage.setItem("formValues", savesArrayJSON)
+    };
+
+    //Form fields onBlur/onFocus validations functions declaration-----------------------------------------------------
     function nameValidate() {
         var name = document.getElementById('nameInput');
 
@@ -486,197 +754,4 @@ window.onload = function () {
         };
     }
 
-    //Validate on Submit --------------------------------------------------------------------
-    document.form.onsubmit = function (event) {
-
-        var name = document.getElementById('nameInput');
-        var lastName = document.getElementById('lastNameInput');
-        var dni = document.getElementById('dniInput');
-        var birth = document.getElementById('birthInput');
-        var phone = document.getElementById('phoneInput');
-        var address = document.getElementById('addressInput');
-        var city = document.getElementById('cityInput');
-        var zip = document.getElementById('zipInput');
-        var email = document.getElementById('emailInput');
-        var password = document.getElementById('passwordInput');
-        var repeatPassword = document.getElementById('repeatPasswordInput');
-
-        var success = true;
-
-        if (validates.name === false) {
-            name.classList.add('invalid');
-            nameError.innerHTML = nameErrorMessage;
-            success = false;
-        };
-        if (validates.lastName === false) {
-            lastName.classList.add('invalid');
-            lastNameError.innerHTML = lastNameErrorMessage;
-            success = false;
-        };
-        if (validates.dni === false) {
-            dni.classList.add('invalid');
-            dniError.innerHTML = dniErrorMessage;
-            success = false;
-        };
-        if (validates.birth === false) {
-            birth.classList.add('invalid');
-            birthError.innerHTML = birthErrorMessage;
-            success = false;
-        };
-        if (validates.phone === false) {
-            phone.classList.add('invalid');
-            phoneError.innerHTML = phoneErrorMessage;
-            success = false;
-        };
-        if (validates.address === false) {
-            address.classList.add('invalid');
-            addressError.innerHTML = addressErrorMessage;
-            success = false;
-        };
-        if (validates.city === false) {
-            city.classList.add('invalid');
-            cityError.innerHTML = cityErrorMessage;
-            success = false;
-        };
-        if (validates.zip === false) {
-            zip.classList.add('invalid');
-            zipError.innerHTML = zipErrorMessage;
-            success = false;
-        };
-        if (validates.email === false) {
-            email.classList.add('invalid');
-            emailError.innerHTML = emailErrorMessage;
-            success = false;
-        };
-        if (validates.password === false) {
-            password.classList.add('invalid');
-            passwordError.innerHTML = passwordErrorMessage;
-            success = false;
-        };
-        if (validates.repeatPassword === false) {
-            repeatPassword.classList.add('invalid');
-            repeatPasswordError.innerHTML = repeatPasswordErrorMessage;
-            success = false;
-        };
-
-        if (success == true) {
-            validateRequest();
-        } else {
-            showModal(success);
-        };
-
-        event.preventDefault();
-    };
-
-    function validateRequest() {
-
-        fetch("https://basp-m2022-api-rest-server.herokuapp.com/signup?name=" + formValues.name
-            + "&lastName=" + formValues.lastName
-            + "&dni=" + formValues.dni
-            + "&dob=" + formValues.birth
-            + "&phone=" + formValues.phone
-            + "&address=" + formValues.address
-            + "&city=" + formValues.city
-            + "&zip=" + formValues.zip
-            + "&email=" + formValues.email
-            + "&password=" + formValues.password)
-            .then(res => res.json())
-            .then(data => mostrarData(data))
-            .catch(error => console.error(error))
-        const mostrarData = (data) => {
-            showModal(data.success);
-        };
-    };
-
-    function showModal(success) {
-
-        var modal = document.getElementById("modalRegistro");
-        var span = document.getElementById("close");
-        var modalMessage = document.getElementById("modal-message");
-        var modalBody = document.getElementById("modal-body");
-
-        modal.style.display = "block";
-
-        if (success) {
-            modalBody.innerHTML = `Name: ${formValues.name}<br>`;
-            modalBody.innerHTML += `Last Name: ${formValues.lastName}<br>`;
-            modalBody.innerHTML += `DNI: ${formValues.dni}<br>`;
-            modalBody.innerHTML += `Birth: ${formValues.birth}<br>`;
-            modalBody.innerHTML += `Phone: ${formValues.phone}<br>`;
-            modalBody.innerHTML += `Address: ${formValues.address}<br>`;
-            modalBody.innerHTML += `City: ${formValues.city}<br>`;
-            modalBody.innerHTML += `Postal Code: ${formValues.zip}<br>`;
-            modalBody.innerHTML += `Email: ${formValues.email}<br>`;
-            modalBody.innerHTML += `Password: ${formValues.password}`;
-
-            modalBody.style.color = '#000';
-            modalMessage.style.backgroundColor = "#373867";
-            modalMessage.innerHTML = 'SUCCESS';
-
-        } else {
-            if (validates.name === false) {
-                modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML = `NAME: ${nameErrorMessage}<br>`;
-            };
-            if (validates.lastName === false) {
-                modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `LAST NAME: ${lastNameErrorMessage}<br>`;
-            };
-            if (validates.dni === false) {
-                modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `DNI: ${dniErrorMessage}<br>`;
-            };
-            if (validates.birth === false) {
-                modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `BIRTH: ${birthErrorMessage}<br>`;
-            };
-            if (validates.phone === false) {
-                modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `PHONE: ${phoneErrorMessage}<br>`;
-            };
-            if (validates.address === false) {
-                modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `ADDRESS: ${addressErrorMessage}<br>`;
-            };
-            if (validates.city === false) {
-                modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `CITY: ${cityErrorMessage}<br>`;
-            };
-            if (validates.zip === false) {
-                modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `POSTAL CODE: ${zipErrorMessage}<br>`;
-            };
-            if (validates.email === false) {
-                modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `EMAIL: ${emailErrorMessage}<br>`;
-            };
-            if (validates.password === false) {
-                modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `PASSWORD: ${passwordErrorMessage}<br>`;
-            };
-            if (validates.repeatPassword === false) {
-                modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `REPEAT PASSWORD: ${repeatPasswordErrorMessage}<br>`;
-            };
-
-        };
-
-        span.onclick = function () {
-            modal.style.display = "none";
-            modalBody.innerHTML = "&nbsp;";
-            if (success) {
-                document.getElementById("form").submit();
-            };
-        };
-
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-                modalBody.innerHTML = "&nbsp;";
-                if (success) {
-                    document.getElementById("form").submit();
-                };
-            };
-        };
-    };
 };
