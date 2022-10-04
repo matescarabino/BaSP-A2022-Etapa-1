@@ -151,10 +151,15 @@ window.onload = function () {
             + "&password=" + formValues.password)
             .then(res => res.json())
             .then(data => showData(data))
-            .catch(error => console.error(error))
+            .catch(error => showError(error))
 
-            const showData = (data) => {
+        const showData = (data) => {
             showModal(data.success);
+        };
+
+        const showError = (error) => {
+            alert(error);
+            console.log(error);
         };
     };
 
@@ -165,22 +170,22 @@ window.onload = function () {
         var modalMessage = document.getElementById("modal-message");
         var modalBody = document.getElementById("modal-body");
 
-        modal.style.display = "block";
+        modal.classList.add('modal-show');
 
         if (success) {
-            modalBody.innerHTML = `Name: ${formValues.name}<br>`;
-            modalBody.innerHTML += `Last Name: ${formValues.lastName}<br>`;
-            modalBody.innerHTML += `DNI: ${formValues.dni}<br>`;
-            modalBody.innerHTML += `Birth: ${formValues.birth}<br>`;
-            modalBody.innerHTML += `Phone: ${formValues.phone}<br>`;
-            modalBody.innerHTML += `Address: ${formValues.address}<br>`;
-            modalBody.innerHTML += `City: ${formValues.city}<br>`;
-            modalBody.innerHTML += `Postal Code: ${formValues.zip}<br>`;
-            modalBody.innerHTML += `Email: ${formValues.email}<br>`;
-            modalBody.innerHTML += `Password: ${formValues.password}`;
+            modalBody.innerHTML = `Name: ${formValues.name}<br><hr>`;
+            modalBody.innerHTML += `Last Name: ${formValues.lastName}<br><hr>`;
+            modalBody.innerHTML += `DNI: ${formValues.dni}<br><hr>`;
+            modalBody.innerHTML += `Birth: ${formValues.birth}<br><hr>`;
+            modalBody.innerHTML += `Phone: ${formValues.phone}<br><hr>`;
+            modalBody.innerHTML += `Address: ${formValues.address}<br><hr>`;
+            modalBody.innerHTML += `City: ${formValues.city}<br><hr>`;
+            modalBody.innerHTML += `Postal Code: ${formValues.zip}<br><hr>`;
+            modalBody.innerHTML += `Email: ${formValues.email}<br><hr>`;
+            modalBody.innerHTML += `Password: ${formValues.password}<hr>`;
 
-            modalBody.style.color = '#000';
-            modalMessage.style.backgroundColor = "#373867";
+            modalBody.classList.add('modal-body-show-success');
+            modalMessage.classList.add('modal-message-show-success');
             modalMessage.innerHTML = 'SUCCESS';
 
             saveData();
@@ -188,53 +193,53 @@ window.onload = function () {
         } else {
             if (validates.name === false) {
                 modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML = `NAME: ${nameErrorMessage}<br>`;
+                modalBody.innerHTML = `NAME: ${nameErrorMessage}<br><hr>`;
             };
             if (validates.lastName === false) {
                 modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `LAST NAME: ${lastNameErrorMessage}<br>`;
+                modalBody.innerHTML += `LAST NAME: ${lastNameErrorMessage}<br><hr>`;
             };
             if (validates.dni === false) {
                 modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `DNI: ${dniErrorMessage}<br>`;
+                modalBody.innerHTML += `DNI: ${dniErrorMessage}<br><hr>`;
             };
             if (validates.birth === false) {
                 modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `BIRTH: ${birthErrorMessage}<br>`;
+                modalBody.innerHTML += `BIRTH: ${birthErrorMessage}<br><hr>`;
             };
             if (validates.phone === false) {
                 modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `PHONE: ${phoneErrorMessage}<br>`;
+                modalBody.innerHTML += `PHONE: ${phoneErrorMessage}<br><hr>`;
             };
             if (validates.address === false) {
                 modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `ADDRESS: ${addressErrorMessage}<br>`;
+                modalBody.innerHTML += `ADDRESS: ${addressErrorMessage}<br><hr>`;
             };
             if (validates.city === false) {
                 modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `CITY: ${cityErrorMessage}<br>`;
+                modalBody.innerHTML += `CITY: ${cityErrorMessage}<br><hr>`;
             };
             if (validates.zip === false) {
                 modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `POSTAL CODE: ${zipErrorMessage}<br>`;
+                modalBody.innerHTML += `POSTAL CODE: ${zipErrorMessage}<br><hr>`;
             };
             if (validates.email === false) {
                 modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `EMAIL: ${emailErrorMessage}<br>`;
+                modalBody.innerHTML += `EMAIL: ${emailErrorMessage}<br><hr>`;
             };
             if (validates.password === false) {
                 modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `PASSWORD: ${passwordErrorMessage}<br>`;
+                modalBody.innerHTML += `PASSWORD: ${passwordErrorMessage}<br><hr>`;
             };
             if (validates.repeatPassword === false) {
                 modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `REPEAT PASSWORD: ${repeatPasswordErrorMessage}<br>`;
+                modalBody.innerHTML += `REPEAT PASSWORD: ${repeatPasswordErrorMessage}<br><hr>`;
             };
 
         };
 
         span.onclick = function () {
-            modal.style.display = "none";
+            modal.classList.remove('modal-show');
             modalBody.innerHTML = "&nbsp;";
             if (success) {
                 document.getElementById("form").submit();
@@ -243,7 +248,7 @@ window.onload = function () {
 
         window.onclick = function (event) {
             if (event.target == modal) {
-                modal.style.display = "none";
+                modal.classList.remove('modal-show');
                 modalBody.innerHTML = "&nbsp;";
                 if (success) {
                     document.getElementById("form").submit();
@@ -311,7 +316,7 @@ window.onload = function () {
     };
 
 
-    function saveData(){
+    function saveData() {
         //Save data to localStorage in JSON format
         var savesArray = JSON.parse(localStorage.getItem('formValues')) || [];
         savesArray = formValues;
@@ -346,7 +351,7 @@ window.onload = function () {
                 formValues.name = name.value;
             };
 
-            if (hasOther === true) {
+            if (hasOther === true || name.value == '') {
                 validates.name = false;
             };
 
@@ -390,7 +395,7 @@ window.onload = function () {
                 formValues.lastName = lastName.value;
             };
 
-            if (hasOther === true) {
+            if (hasOther === true || lastName.value == '') {
                 validates.lastName = false;
             };
 
@@ -434,7 +439,7 @@ window.onload = function () {
                 formValues.dni = dni.value;
             };
 
-            if (hasOther === true) {
+            if (hasOther === true || dni.value == '') {
                 validates.dni = false;
             };
 
@@ -470,7 +475,7 @@ window.onload = function () {
                 birth.classList.add('invalid');
                 birthError.innerHTML = birthErrorMessage;
                 validates.birth = false;
-            }else{
+            } else {
                 validates.birth = true;
                 formValues.birth = birthFormated;
             };
@@ -510,7 +515,7 @@ window.onload = function () {
                 formValues.phone = phone.value;
             };
 
-            if (hasOther === true) {
+            if (hasOther === true || phone.value == '') {
                 validates.phone = false;
             };
 
@@ -551,13 +556,15 @@ window.onload = function () {
                 if (address.value.length > 5) {
                     hasLenght = true;
                 };
-
-                if (hasLetter && hasNumber && (hasSpace == 1) && hasLenght) {
-                    validates.address = true;
-                    formValues.address = address.value;
-                } else {
-                    validates.address = false;
-                };
+            };
+            if (address.value == '') {
+                validates.address = false;
+            };
+            if (hasLetter && hasNumber && (hasSpace == 1) && hasLenght) {
+                validates.address = true;
+                formValues.address = address.value;
+            } else {
+                validates.address = false;
             };
 
             if (validates.address === false) {
@@ -600,7 +607,7 @@ window.onload = function () {
                 formValues.city = city.value;
             };
 
-            if (hasOther === true) {
+            if (hasOther === true || city.value == '') {
                 validates.city = false;
             };
 
@@ -644,7 +651,7 @@ window.onload = function () {
                 formValues.zip = zip.value;
             };
 
-            if (hasOther == true) {
+            if (hasOther == true || zip.value == '') {
                 validates.zip = false;
             };
 
@@ -740,10 +747,13 @@ window.onload = function () {
                 repeatPassword.classList.add('invalid');
                 repeatPasswordError.innerHTML = repeatPasswordErrorMessage;
                 validates.repeatPassword = false;
-            }else{
+            } else {
                 validates.repeatPassword = true;
                 formValues.repeatPassword = repeatPassword.value;
             };
+            if(repeatPassword.value == ''){
+                validates.repeatPassword = false;
+            }
         };
 
         repeatPassword.onfocus = function () {

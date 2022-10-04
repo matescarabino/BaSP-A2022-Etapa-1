@@ -119,10 +119,15 @@ window.onload = function () {
         + "&password=" + formValues.password)
             .then(res => res.json())
             .then(data => showData(data))
-            .catch(error => console.error(error))
+            .catch(error => showError(error))
 
         const showData = (data) => {
             showModal(data.success);
+        };
+
+        const showError = (error) => {
+            alert(error);
+            console.log(error);
         };
     };
 
@@ -132,37 +137,35 @@ window.onload = function () {
         var modalMessage = document.getElementById("modal-message");
         var modalBody = document.getElementById("modal-body");
 
-        modal.style.display = "block";
+        modal.classList.add('modal-show');
 
         if (validates.email === true && validates.password === true && success === true) {
             modalBody.innerHTML = `Mail: ${formValues.email}<br>`;
             modalBody.innerHTML += `Password: ${formValues.password}`;
 
-            modalBody.style.color = '#000';
-            modalMessage.style.backgroundColor = "#373867";
-            modalBody.style.textAlign = 'center';
+            modalBody.classList.add('modal-body-show-success');
+            modalMessage.classList.add('modal-message-show-success');
             modalMessage.innerHTML = 'SUCCESS';
         } else {
 
             if (validates.email === false) {
                 modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML = `Email: ${emailErrorMessage}<br>`;
+                modalBody.innerHTML = `EMAIL: ${emailErrorMessage}<br>`;
             };
 
             if (validates.password === false) {
                 modalMessage.innerHTML = 'ERROR';
-                modalBody.innerHTML += `Password: ${passwordErrorMessage}<br>`;
+                modalBody.innerHTML += `PASSWORD: ${passwordErrorMessage}<br>`;
             };
 
             if (validates.email === true && validates.password === true && (success === false)) {
                 modalMessage.innerHTML = 'ERROR';
                 modalBody.innerHTML += `Invalid user or password`;
-                modalBody.style.textAlign = 'center';
             };
         };
 
         span.onclick = function () {
-            modal.style.display = "none";
+            modal.classList.remove('modal-show');
             modalBody.innerHTML = "&nbsp;";
             if (success) {
                 document.getElementById("form").submit();
@@ -171,7 +174,7 @@ window.onload = function () {
 
         window.onclick = function (event) {
             if (event.target == modal) {
-                modal.style.display = "none";
+                modal.classList.remove('modal-show');
                 modalBody.innerHTML = "&nbsp;";
                 if (success) {
                     document.getElementById("form").submit();

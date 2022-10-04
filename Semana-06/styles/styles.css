@@ -147,7 +147,7 @@ main {
     justify-content: center;
     text-align: center;
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 10% auto;
 }
 
 .modal-message {
@@ -185,12 +185,24 @@ main {
 }
 
 #modal-body{
-    text-align: left;
-    margin: 5%;
+    text-align: center;
+    margin:0 5% 5% 5%;
     line-height: 23px;
     color: #F13312;
 }
 
+.modal-show{
+    display: block;
+}
+
+.modal-body-show-success{
+    text-align: left;
+    color: #000 !important;
+}
+
+.modal-message-show-success{
+    background-color: #373867;
+}
 
 /*Larger tablets in landscape, laptops and small desktops*/
 @media (min-width: 1024px) {
